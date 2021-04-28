@@ -1,0 +1,30 @@
+$content-width: 1100;
+$L: 1200px;
+$M: 992px;
+$S: 768px;
+$XS: 576px;
+$mob: 540px;
+
+.container {
+   @media (min-width: $mob) {
+      width: 100%;
+      margin: 0 auto;
+   }
+
+   @media (min-width: $XS) {
+      width: 540px;
+      margin: 0 auto;
+   }
+   @media (min-width: $S) {
+      width: 720px;
+      margin: 0 auto;
+   }
+   @media (min-width: $M) {
+      width: 960px;
+      margin: 0 auto;
+   }
+   @media (min-width: $L) {
+      width: $content-width + px;
+      margin: 0 auto;
+   }
+}
