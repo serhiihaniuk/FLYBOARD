@@ -1,7 +1,10 @@
 const fullPage = new Swiper(".swiper-container", {
   // Optional parameters
-  direction: "horizontal",
+  direction: "vertical",
   loop: false,
+  mousewheel: {
+    invert: false,
+  },
 
   // Navigation arrows
   navigation: {
@@ -20,6 +23,13 @@ const photoSlider = new Swiper(".slider-photo", {
   navigation: {
     nextEl: ".slider-photo__next",
     prevEl: ".slider-photo__prev",
+  },
+  pagination: {
+    el: ".swiper-photo-pagination",
+    type: "bullets",
+    bulletClass: "swiper-photo-bullet",
+    bulletActiveClass: "swiper-photo-bullet-active",
+    clickable: true,
   },
 });
 
@@ -55,6 +65,7 @@ showTabButtons.forEach((button) => {
 const mediaTabButtons = document.querySelectorAll(".media__tab-but");
 const mediaTabContent = document.querySelectorAll(".media__tab-cont");
 const mediaSection = document.querySelector(".media");
+const controls = document.querySelector(".slider-photo__controls");
 
 mediaTabButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -71,8 +82,38 @@ mediaTabButtons.forEach((button) => {
 
     if (tabId === "#media-tab-second") {
       mediaSection.classList.add("night");
+      controls.style.display = "none";
     } else {
       mediaSection.classList.remove("night");
+      controls.style.display = "";
+    }
+    button.classList.add("active");
+    currentTab.classList.add("active");
+  });
+});
+
+//* info section tabs
+const infoTabButtons = document.querySelectorAll(".info__tab-but");
+const infoTabContent = document.querySelectorAll(".info__tab-cont");
+const infoSection = document.querySelector(".info");
+
+infoTabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const tabId = button.getAttribute("data-info-tab");
+    const currentTab = document.querySelector(tabId);
+
+    infoTabButtons.forEach((button) => {
+      button.classList.remove("active");
+    });
+    infoTabContent.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    console.log(tabId);
+
+    if (tabId === "#info-tab-second") {
+      infoSection.classList.add("night");
+    } else {
+      infoSection.classList.remove("night");
     }
     button.classList.add("active");
     currentTab.classList.add("active");

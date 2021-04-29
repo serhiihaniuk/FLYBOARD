@@ -47,7 +47,7 @@
 
 .media.night {
    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../img/background/bg51.jpg");
+      url("../img/background/bg5.jpg");
 }
 
 .media__tab-cont {
@@ -64,7 +64,7 @@
    display: grid;
    grid-template-columns: 400px 430px 200px;
    grid-template-rows: 400px;
-   transform: skewX(-5deg);
+   transform: skewX(-4deg);
    margin: 0px 0px 15px 0px;
    // .media-grid_section
 
@@ -130,6 +130,27 @@
    }
 }
 
-.xx {
-   border: 5px solid red;
+.swiper-photo-pagination {
+   display: flex;
+   width: 100px;
+   justify-content: center;
+   align-items: center;
+}
+
+.swiper-photo-bullet {
+   margin: 3px 5px 0px 0px;
+   width: 20px;
+   height: 4px;
+   transform: skewX(-35deg);
+   background-color: #fff;
+   opacity: 0.5;
+   transition: background-color 0.3s ease;
+   cursor: pointer;
+   &:hover {
+      background-color: $red;
+   }
+}
+.swiper-photo-bullet-active {
+   background-color: black;
+   opacity: 1;
 }
