@@ -1,4 +1,4 @@
-$content-width: 1100;
+$content-width: 1200;
 $L: 1200px;
 $M: 992px;
 $S: 768px;
@@ -6,6 +6,7 @@ $XS: 576px;
 $mob: 540px;
 
 .container {
+   border: 2px solid greenyellow;
    @media (min-width: $mob) {
       width: 100%;
       margin: 0 auto;
