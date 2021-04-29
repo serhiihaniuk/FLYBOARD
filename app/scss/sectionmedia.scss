@@ -37,6 +37,7 @@
 
 .media-grid {
    display: grid;
+   padding: 0px 0px 0px 100px;
    grid-template-columns: 400px 430px 200px;
    grid-template-rows: 400px;
    transform: skewX(-4deg);

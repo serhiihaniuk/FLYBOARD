@@ -23,6 +23,9 @@
       font-size: 85px;
       line-height: 104px;
       color: $red;
+      transform: translatex(255px);
+      transition: all 1s ease;
+      opacity: 0;
    }
 
    // .promo__subtitle
@@ -34,13 +37,36 @@
       line-height: 79px;
       color: #fff;
       margin: 0px 0px 50px 0px;
+      transform: translatex(-255px);
+      transition: all 1s ease;
+      opacity: 0;
    }
 
    // .promo__text
-
    &__text {
       color: #fff;
       font-size: 17px;
       line-height: 27px;
+      transform: translateY(255px);
+      transition: all 1s ease;
+      opacity: 0;
+   }
+}
+
+.promoa.swiper-slide-active {
+   .promo__title {
+      transform: translatey(-0);
+      transition: all 2s ease;
+      opacity: 1;
+   }
+   .promo__subtitle {
+      transform: translatex(-0);
+      transition: all 2s ease 0.5s;
+      opacity: 1;
+   }
+   .promo__text {
+      transform: translatex(-0);
+      transition: all 2s ease 0.6s;
+      opacity: 1;
    }
 }

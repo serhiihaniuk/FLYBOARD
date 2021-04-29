@@ -1,0 +1,50 @@
+.discount {
+   background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/background/bg7.jpg");
+   background-size: cover;
+   background-position: 0% 0%;
+   background-repeat: no-repeat;
+   flex: 1 0 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 104px 0 60px;
+
+   // .discount__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+   }
+
+   // .discount__content
+
+   &__content {
+      width: 828px;
+      text-align: center;
+      flex: 1 1 auto;
+      padding: 90px 0px 0px 0px;
+   }
+
+   // .discount__title
+
+   &__title {
+      font-style: italic;
+      font-weight: 900;
+      font-size: 85px;
+      line-height: 104px;
+      color: $red;
+   }
+   // .discount__text
+
+   &__text {
+      font-style: italic;
+      font-weight: 900;
+      font-size: 25px;
+      line-height: 158.47%;
+      color: #fff;
+   }
+}

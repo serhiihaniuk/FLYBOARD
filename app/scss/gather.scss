@@ -1,0 +1,85 @@
+.gather {
+   background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/background/bg8.jpg");
+   background-size: cover;
+   background-position: 0% 0%;
+   background-repeat: no-repeat;
+   flex: 1 0 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 104px 0 60px;
+
+   // .gather__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+   }
+
+   // .gather__title
+
+   &__title {
+   }
+
+   // .gather__tabs
+
+   &__tabs {
+   }
+
+   // .gather__tab-but
+
+   &__tab-but {
+   }
+
+   // .gather__gallery
+
+   &__gallery {
+   }
+
+   // .gather__tab-cont
+
+   &__tab-cont {
+   }
+
+   // .gather__form
+
+   &__form {
+   }
+
+   // .gather__items
+
+   &__items {
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 0px 15px 0px;
+   }
+
+   // .gather__item
+
+   &__item {
+      padding: 30px;
+      min-height: 320px;
+      max-width: 590px;
+      flex: 0 0 49%;
+      transform: skewX(-5deg);
+      background-color: #fff;
+   }
+
+   // .gather__confirm
+
+   &__confirm {
+      display: block;
+      margin: 0 auto;
+   }
+}
+
+.gather__tab-cont {
+   display: none;
+}
+
+.gather__tab-cont.active {
+   display: block;
+}

@@ -15,6 +15,7 @@ $redlight: #f03e45;
 @import "sectionmedia";
 @import "work";
 @import "discount";
+@import "gather";
 
 body {
   font-family: Montserrat;
@@ -23,6 +24,7 @@ body {
   font-style: normal;
   font-size: 17px;
   line-height: 27px;
+  background-color: rgb(1, 1, 31);
 }
 
 .wrapper {
@@ -49,4 +51,5 @@ body {
 
 .screen {
   display: flex;
+  overflow: hidden;
 }

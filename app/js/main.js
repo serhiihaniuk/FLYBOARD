@@ -1,7 +1,9 @@
 const fullPage = new Swiper(".swiper-container", {
   // Optional parameters
-  direction: "vertical",
+  direction: "horizontal",
   loop: false,
+  speed: 800,
+  parallax: true,
   mousewheel: {
     invert: false,
   },
@@ -115,6 +117,29 @@ infoTabButtons.forEach((button) => {
     } else {
       infoSection.classList.remove("night");
     }
+    button.classList.add("active");
+    currentTab.classList.add("active");
+  });
+});
+
+//* gather section tabs
+const gatherTabButtons = document.querySelectorAll(".gather__tab-but");
+const gatherTabContent = document.querySelectorAll(".gather__tab-cont");
+const gatherSection = document.querySelector(".gather");
+
+gatherTabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const tabId = button.getAttribute("data-gather-tab");
+    const currentTab = document.querySelector(tabId);
+
+    gatherTabButtons.forEach((button) => {
+      button.classList.remove("active");
+    });
+    gatherTabContent.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    console.log(tabId);
+
     button.classList.add("active");
     currentTab.classList.add("active");
   });
