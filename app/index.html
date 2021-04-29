@@ -8,27 +8,68 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="abc"><!-- Slider main container -->
-<div class="swiper-container">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    ...
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+    <div class="wrapper">
+      <div class="page">
+        <header class="header">
+          <div class="header__content">
+            <a class="header__logo-link" href="#"
+              ><img class="header__logo" src="img/logo.png" alt=""
+            /></a>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+            <nav class="header__menu">
+              <ul class="header__list">
+                <li class="header__item"><a href="#">О нас</a></li>
+                <li class="header__item"><a href="#">Цены</a></li>
+                <li class="header__item"><a href="#">Школа</a></li>
+                <li class="header__item"><a href="#">Шоу</a></li>
+                <li class="header__item"><a href="#">В подарок</a></li>
+                <li class="header__item"><a href="#">Купить</a></li>
+                <li class="header__item"><a href="#">Трюки</a></li>
+                <li class="header__item"><a href="#">Вопросы</a></li>
+                <li class="header__item"><a href="#">Отзывы</a></li>
+                <li class="header__item"><a href="#">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="header__contacts">
+              <a href="tel:380679200950" class="header__tel"
+                >+38 (067) 920-0-950</a
+              ><a href="" class="header__order common-button">Заказать шоу</a>
+            </div>
+            <div class="header__language"></div>
+            <div class="header__brgr"></div>
+          </div>
+        </header>
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- screen 1  -->
+            <div class="swiper-slide screen">
+              <div class="promo">
+                <div class="promo__content">
+                  <h1 class="promo__title">Флайборд-шоу</h1>
+                  <h2 class="promo__subtitle">от компании FlyboardKiev</h2>
+                  <div class="promo__text">
+                    Новый, не с чем не сравнимый вид экстремального спорта. Он
+                    позволяет в буквальном смысле летать над водой, нырять под
+                    воду, кувыркаться, и проделывать любые другие трюки, на
+                    которые Вам хватит фантазии и смелости!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- screen 2  -->
+            <div class="swiper-slide screen">Slide 2</div>
+            <!-- screen 3  -->
+            <div class="swiper-slide screen">Slide 3</div>
+          </div>
 
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>
-</div>
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
     <script src="js/main.min.js"></script>
   </body>
 </html>
