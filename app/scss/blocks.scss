@@ -47,6 +47,19 @@
    color: #fff;
 }
 
+.secondary-title {
+   font-style: italic;
+   font-weight: 800;
+   font-size: 25px;
+   line-height: 30px;
+}
+.secondary-title--red {
+   color: $red;
+}
+.secondary-title--white {
+   color: #fff;
+}
+
 .gallery {
    display: flex;
    justify-content: space-between;

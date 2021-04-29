@@ -4,9 +4,6 @@ const swiper = new Swiper(".swiper-container", {
   loop: false,
 
   // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
 
   // Navigation arrows
   navigation: {
@@ -37,6 +34,34 @@ showTabButtons.forEach((button) => {
       showSection.classList.add("night");
     } else {
       showSection.classList.remove("night");
+    }
+    button.classList.add("active");
+    currentTab.classList.add("active");
+  });
+});
+
+//* info section tabs
+const infoTabButtons = document.querySelectorAll(".info__tab-but");
+const infoTabContent = document.querySelectorAll(".info__tab-cont");
+const infoSection = document.querySelector(".info");
+
+infoTabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const tabId = button.getAttribute("data-info-tab");
+    const currentTab = document.querySelector(tabId);
+
+    infoTabButtons.forEach((button) => {
+      button.classList.remove("active");
+    });
+    infoTabContent.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    console.log(tabId);
+
+    if (tabId === "#info-tab-second") {
+      infoSection.classList.add("night");
+    } else {
+      infoSection.classList.remove("night");
     }
     button.classList.add("active");
     currentTab.classList.add("active");
