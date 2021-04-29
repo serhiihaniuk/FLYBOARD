@@ -1,14 +1,25 @@
-const swiper = new Swiper(".swiper-container", {
+const fullPage = new Swiper(".swiper-container", {
   // Optional parameters
   direction: "horizontal",
   loop: false,
-
-  // If we need pagination
 
   // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+});
+
+const photoSlider = new Swiper(".slider-photo", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: false,
+  speed: 800,
+  spaceBetween: -1000,
+
+  navigation: {
+    nextEl: ".slider-photo__next",
+    prevEl: ".slider-photo__prev",
   },
 });
 
@@ -40,28 +51,28 @@ showTabButtons.forEach((button) => {
   });
 });
 
-//* info section tabs
-const infoTabButtons = document.querySelectorAll(".info__tab-but");
-const infoTabContent = document.querySelectorAll(".info__tab-cont");
-const infoSection = document.querySelector(".info");
+//* media section tabs
+const mediaTabButtons = document.querySelectorAll(".media__tab-but");
+const mediaTabContent = document.querySelectorAll(".media__tab-cont");
+const mediaSection = document.querySelector(".media");
 
-infoTabButtons.forEach((button) => {
+mediaTabButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const tabId = button.getAttribute("data-info-tab");
+    const tabId = button.getAttribute("data-media-tab");
     const currentTab = document.querySelector(tabId);
 
-    infoTabButtons.forEach((button) => {
+    mediaTabButtons.forEach((button) => {
       button.classList.remove("active");
     });
-    infoTabContent.forEach((tab) => {
+    mediaTabContent.forEach((tab) => {
       tab.classList.remove("active");
     });
     console.log(tabId);
 
-    if (tabId === "#info-tab-second") {
-      infoSection.classList.add("night");
+    if (tabId === "#media-tab-second") {
+      mediaSection.classList.add("night");
     } else {
-      infoSection.classList.remove("night");
+      mediaSection.classList.remove("night");
     }
     button.classList.add("active");
     currentTab.classList.add("active");

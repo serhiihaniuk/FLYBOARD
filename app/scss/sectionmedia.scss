@@ -1,0 +1,135 @@
+.media {
+   background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/background/bg5.jpg");
+   background-size: cover;
+   background-position: 0% 0%;
+   background-repeat: no-repeat;
+   flex: 1 0 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 104px 0 60px;
+   // .media__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+   }
+
+   // .media__title
+
+   &__title {
+   }
+
+   // .media__tabs
+
+   &__tabs {
+   }
+
+   // .media__tab-but
+
+   &__tab-but {
+   }
+
+   // .media__tab-wrap
+
+   &__tab-wrap {
+      position: relative;
+   }
+
+   // .media__tab-cont
+
+   &__tab-cont {
+   }
+}
+
+.media.night {
+   background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/background/bg51.jpg");
+}
+
+.media__tab-cont {
+   display: none;
+}
+
+.media__tab-cont.active {
+   display: flex;
+   height: auto;
+   width: 1110px;
+}
+
+.media-grid {
+   display: grid;
+   grid-template-columns: 400px 430px 200px;
+   grid-template-rows: 400px;
+   transform: skewX(-5deg);
+   margin: 0px 0px 15px 0px;
+   // .media-grid_section
+
+   &_section1 {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 190px 190px;
+      grid-template-rows: 190px 190px;
+   }
+   &_section2 {
+      display: grid;
+      grid-template-columns: 420px;
+      grid-template-rows: 390px;
+   }
+   &_section3 {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 190px;
+      grid-template-rows: 190px 190px;
+   }
+
+   // .media-grid__img
+
+   &__img {
+      width: 100%;
+      height: 100%;
+   }
+}
+
+.slider-photo {
+   position: relative;
+   &__controls {
+      width: 200px;
+      height: 11px;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 15;
+   }
+   &__prev {
+      width: 46px;
+      height: 11px;
+      cursor: pointer;
+      background: url("../ico/arrows/wl.svg");
+      &:hover {
+         background: url("../ico/arrows/rl.svg");
+      }
+   }
+
+   // .slider-photo__next
+
+   &__next {
+      width: 46px;
+      height: 11px;
+      cursor: pointer;
+      background: url("../ico/arrows/wr.svg");
+      &:hover {
+         background: url("../ico/arrows/rr.svg");
+      }
+   }
+}
+
+.xx {
+   border: 5px solid red;
+}
