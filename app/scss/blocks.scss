@@ -8,10 +8,29 @@
    background-color: $redlight;
    box-shadow: 0px 5px 5px rgba(204, 33, 40, 0.3);
    border-radius: 100px;
-
-   padding: 15px 40px;
+   white-space: nowrap;
+   padding: 15px 25px;
    transition: background-color 0.3s ease;
    &:hover {
       background-color: $red;
+   }
+}
+
+.social {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 30px;
+   width: 150px;
+   &__link {
+      display: block;
+      color: rgba($color: #fff, $alpha: 0.5);
+      transition: color 0.3s ease;
+      &:hover {
+         color: $red;
+      }
+   }
+   &__link:nth-child(3) {
+      font-size: 38px;
    }
 }
