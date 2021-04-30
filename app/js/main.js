@@ -35,112 +35,41 @@ const photoSlider = new Swiper(".slider-photo", {
   },
 });
 
-//* show section tabs
-const showTabButtons = document.querySelectorAll(".show__tab-but");
-const showTabContent = document.querySelectorAll(".show__tab-cont");
-const showSection = document.querySelector(".show");
+runTabs("show");
+runTabs("media");
+runTabs("info");
+runTabs("gather");
 
-showTabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const tabId = button.getAttribute("data-show-tab");
-    const currentTab = document.querySelector(tabId);
-
-    showTabButtons.forEach((button) => {
-      button.classList.remove("active");
-    });
-    showTabContent.forEach((tab) => {
-      tab.classList.remove("active");
-    });
-    console.log(tabId);
-
-    if (tabId === "#show-tab-second") {
-      showSection.classList.add("night");
-    } else {
-      showSection.classList.remove("night");
-    }
-    button.classList.add("active");
-    currentTab.classList.add("active");
-  });
-});
-
-//* media section tabs
-const mediaTabButtons = document.querySelectorAll(".media__tab-but");
-const mediaTabContent = document.querySelectorAll(".media__tab-cont");
-const mediaSection = document.querySelector(".media");
 const controls = document.querySelector(".slider-photo__controls");
+function runTabs(sectionName) {
+  const buttons = document.querySelectorAll(`.${sectionName}__tab-but`);
+  const tabContent = document.querySelectorAll(`.${sectionName}__tab-cont`);
+  const section = document.querySelector(`.${sectionName}`);
+  tabs(buttons, tabContent, section, sectionName);
+}
+function tabs(buttons, tabContent, section, sectionName) {
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log(button);
+      const tabId = button.getAttribute(`data-${sectionName}-tab`);
+      const currentTab = document.querySelector(tabId);
 
-mediaTabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const tabId = button.getAttribute("data-media-tab");
-    const currentTab = document.querySelector(tabId);
+      buttons.forEach((button) => {
+        button.classList.remove("active");
+      });
+      tabContent.forEach((tab) => {
+        tab.classList.remove("active");
+      });
 
-    mediaTabButtons.forEach((button) => {
-      button.classList.remove("active");
+      if (tabId === `#${sectionName}-tab-second`) {
+        tabId === "#media-tab-second" ? (controls.style.display = "none") : "";
+        section.classList.add("night");
+      } else {
+        section.classList.remove("night");
+        controls.style.display = "";
+      }
+      button.classList.add("active");
+      currentTab.classList.add("active");
     });
-    mediaTabContent.forEach((tab) => {
-      tab.classList.remove("active");
-    });
-    console.log(tabId);
-
-    if (tabId === "#media-tab-second") {
-      mediaSection.classList.add("night");
-      controls.style.display = "none";
-    } else {
-      mediaSection.classList.remove("night");
-      controls.style.display = "";
-    }
-    button.classList.add("active");
-    currentTab.classList.add("active");
   });
-});
-
-//* info section tabs
-const infoTabButtons = document.querySelectorAll(".info__tab-but");
-const infoTabContent = document.querySelectorAll(".info__tab-cont");
-const infoSection = document.querySelector(".info");
-
-infoTabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const tabId = button.getAttribute("data-info-tab");
-    const currentTab = document.querySelector(tabId);
-
-    infoTabButtons.forEach((button) => {
-      button.classList.remove("active");
-    });
-    infoTabContent.forEach((tab) => {
-      tab.classList.remove("active");
-    });
-    console.log(tabId);
-
-    if (tabId === "#info-tab-second") {
-      infoSection.classList.add("night");
-    } else {
-      infoSection.classList.remove("night");
-    }
-    button.classList.add("active");
-    currentTab.classList.add("active");
-  });
-});
-
-//* gather section tabs
-const gatherTabButtons = document.querySelectorAll(".gather__tab-but");
-const gatherTabContent = document.querySelectorAll(".gather__tab-cont");
-const gatherSection = document.querySelector(".gather");
-
-gatherTabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const tabId = button.getAttribute("data-gather-tab");
-    const currentTab = document.querySelector(tabId);
-
-    gatherTabButtons.forEach((button) => {
-      button.classList.remove("active");
-    });
-    gatherTabContent.forEach((tab) => {
-      tab.classList.remove("active");
-    });
-    console.log(tabId);
-
-    button.classList.add("active");
-    currentTab.classList.add("active");
-  });
-});
+}
