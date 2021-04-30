@@ -1,3 +1,5 @@
+//@ sliders --
+
 const fullPage = new Swiper(".swiper-container", {
   // Optional parameters
   direction: "horizontal",
@@ -35,6 +37,7 @@ const photoSlider = new Swiper(".slider-photo", {
   },
 });
 
+//@ tabs --
 runTabs("show");
 runTabs("media");
 runTabs("info");
