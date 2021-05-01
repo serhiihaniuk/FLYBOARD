@@ -35,6 +35,10 @@
       font-size: 85px;
       line-height: 104px;
       color: $red;
+      @media (max-width: $XS) {
+         font-size: 65px;
+         line-height: 85px;
+      }
    }
    // .discount__text
 

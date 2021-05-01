@@ -15,7 +15,11 @@
       justify-content: space-evenly;
       height: 100%;
    }
-
+   &__title {
+      @media (max-width: $XS) {
+         margin: 0px 0px 50px 0px;
+      }
+   }
    // .work__items
 
    &__items {
@@ -46,6 +50,9 @@
          font-size: 14px;
          line-height: 18px;
          padding: 15px;
+      }
+      @media (max-width: $XS) {
+         flex: 0 0 45%;
       }
       &::before {
          font-style: italic;

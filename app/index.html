@@ -14,8 +14,14 @@
         <header class="header">
           <div class="header__content container">
             <a class="header__logo-link" href="#"
-              ><img class="header__logo" src="img/logo.png" alt=""
-            /></a>
+              ><picture>
+                <source srcset="img/logo-min.png" media="(max-width: 576px)" />
+                <img
+                  class="header__logo"
+                  src="img/logo.png"
+                  alt="logo"
+                /> </picture
+            ></a>
 
             <nav class="header__menu">
               <ul class="header__list">

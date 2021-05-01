@@ -15,8 +15,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @media (max-width: $M) {
+      @media (max-width: $L) {
          justify-content: flex-end;
+      }
+      @media (max-width: $XS) {
+         justify-content: center;
       }
    }
 
@@ -29,15 +32,19 @@
 
    &__logo-link {
       display: block;
-      @media (max-width: $M) {
+      @media (max-width: $L) {
          flex: 1 1 auto;
+      }
+      @media (max-width: $XS) {
+         flex: 0 0 auto;
+         margin: 0 auto 0 25px;
       }
    }
 
    // .header__menu
 
    &__menu {
-      @media (max-width: $M) {
+      @media (max-width: $L) {
          display: none;
       }
    }
@@ -87,14 +94,21 @@
    &__order {
       padding: 15px 25px;
       display: block;
-      @media (max-width: $M) {
+      @media (max-width: $L) {
          margin: 0px 35px 0px 0px;
+      }
+      @media (max-width: $XS) {
+         flex: 1 1 auto;
+         margin: 0 15px;
       }
    }
 
    // .header__language
 
    &__language {
+      @media (max-width: $XS) {
+         display: none;
+      }
    }
 
    &__select {
@@ -107,9 +121,6 @@
       border: none;
       outline: none;
       margin: 0 10px;
-      @media (max-width: $M) {
-         margin: 0px 35px 0px 35px;
-      }
    }
    &__option {
       background-color: black;
@@ -118,6 +129,10 @@
    &__brgr {
       margin: 0px 0px 0px 10px;
       cursor: pointer;
+      @media (max-width: $XS) {
+         flex: 0 0 auto;
+         margin: 0 25px 0 auto;
+      }
       span {
          transition: background-color 0.3s ease;
       }

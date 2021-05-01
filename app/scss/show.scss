@@ -58,5 +58,8 @@
       transform: translatey(-0);
       transition: all 1s ease 0.2s;
       opacity: 1;
+      @media (max-width: $XS) {
+         margin: 0px 0px 40px 0px;
+      }
    }
 }

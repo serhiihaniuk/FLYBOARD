@@ -21,6 +21,9 @@
       transform: translateY(255px);
       transition: all 1s ease;
       opacity: 0;
+      @media (max-width: $XS) {
+         margin: 0px 0px 40px 0px;
+      }
    }
    // .events__gallery
    &__gallery {

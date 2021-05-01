@@ -17,11 +17,14 @@
    &__tab-wrap {
       position: relative;
    }
+   &__title {
+      @media (max-width: $XS) {
+         margin: 0px 0px 40px 0px;
+      }
+   }
+   &__tab-but {
+   }
 }
-
-// .media.night {
-//    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/5.jpg");
-// }
 
 .media__tab-cont {
    display: none;
@@ -40,6 +43,12 @@
    gap: 10px;
    transform: skewX(-4deg);
    margin: 0px 0px 15px 0px;
+   @media (max-width: $XS) {
+      margin: 30px 0px 0px 0px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 200px 200px 200px;
+      transform: skewX(-0deg);
+   }
    // .media-grid_section
 
    &_section1 {
@@ -118,7 +127,8 @@
    }
 
    @media (min-width: $XS) {
-      width: 500px;
+      width: 540px;
+      padding: 0px 0px 35px 0px;
    }
    @media (min-width: $S) {
       width: 700px;

@@ -49,6 +49,10 @@
       font-size: 75px;
       line-height: 85px;
    }
+   @media (max-width: $XS) {
+      font-size: 45px;
+      line-height: 35px;
+   }
 }
 
 .secondary-title {
@@ -76,15 +80,25 @@
       padding: 0 15px;
       justify-content: space-evenly;
    }
+   @media (max-width: $XS) {
+      flex-wrap: wrap;
+   }
 
    // .gallery__item
    &__item {
       flex: 0 0 24%;
+      @media (max-width: $XS) {
+         flex: 0 0 49%;
+         margin: 15px 0px 0px 0px;
+      }
    }
    &__picture {
       height: 350px;
       border: 10px solid rgba(255, 255, 255, 0.5);
       transform: skewX(-5deg);
+      @media (max-width: $XS) {
+         height: 300px;
+      }
    }
 
    // .gallery__img

@@ -27,7 +27,7 @@ const photoSlider = new Swiper(".slider-photo", {
   direction: "horizontal",
   loop: false,
   speed: 800,
-  spaceBetween: -1000,
+  spaceBetween: -500,
 
   navigation: {
     nextEl: ".slider-photo__next",
@@ -40,6 +40,11 @@ const photoSlider = new Swiper(".slider-photo", {
     bulletActiveClass: "swiper-photo-bullet-active",
     clickable: true,
   },
+  // breakpoints: {
+  //   577: {
+  //     spaceBetween: -1000,
+  //   },
+  // },
 });
 
 //@ tabs --
