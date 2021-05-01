@@ -7,11 +7,11 @@ $mob: 540px;
 
 .container {
    border: 2px solid greenyellow;
+
    @media (min-width: $mob) {
       width: 100%;
       margin: 0 auto;
    }
-
    @media (min-width: $XS) {
       width: 540px;
       margin: 0 auto;

@@ -53,6 +53,10 @@
       font-size: 45px;
       line-height: 35px;
    }
+   @media (max-width: $mob) {
+      font-size: 35px;
+      line-height: 35px;
+   }
 }
 
 .secondary-title {
@@ -90,6 +94,9 @@
       @media (max-width: $XS) {
          flex: 0 0 49%;
          margin: 15px 0px 0px 0px;
+      }
+      @media (max-width: $mob) {
+         flex: 0 0 90%;
       }
    }
    &__picture {
@@ -144,6 +151,12 @@
       &:hover {
          background-color: $red;
       }
+   }
+   @media (max-width: $XS) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 30px;
    }
 }
 

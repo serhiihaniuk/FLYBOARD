@@ -4,6 +4,9 @@
   background-size: cover;
   background-position: 0% 0%;
   background-repeat: no-repeat;
+  @media (max-width: $mob) {
+    padding: 0 15px 30px;
+  }
 }
 
 $red: #cc2128;

@@ -49,6 +49,7 @@
       grid-template-rows: 200px 200px 200px;
       transform: skewX(-0deg);
    }
+
    // .media-grid_section
 
    &_section1 {
@@ -122,9 +123,8 @@
 .media-grid__wrapper {
    border: 5px solid rgb(149, 55, 243);
 
-   @media (min-width: $mob) {
-      width: 310px;
-   }
+   width: 300px;
+   padding: 0px 0px 15px 0px;
 
    @media (min-width: $XS) {
       width: 540px;

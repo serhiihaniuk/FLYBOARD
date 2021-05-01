@@ -54,6 +54,9 @@
       @media (max-width: $XS) {
          flex: 0 0 45%;
       }
+      @media (max-width: $mob) {
+         flex: 0 0 95%;
+      }
       &::before {
          font-style: italic;
          font-weight: 900;
