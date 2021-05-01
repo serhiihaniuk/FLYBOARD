@@ -1,12 +1,16 @@
 //@ sliders --
 
 const fullPage = new Swiper(".swiper-container", {
+  wrapperClass: "screen-wrapper",
+  slideClass: "screen",
   // Optional parameters
   direction: "vertical",
+  slidesPerView: "auto",
   loop: false,
+
   speed: 800,
   parallax: true,
-  // freeMode: true,
+  freeMode: true,
   mousewheel: {
     invert: false,
   },
