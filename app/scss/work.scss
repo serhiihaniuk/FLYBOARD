@@ -22,9 +22,10 @@
 
    &__items {
       width: 100%;
+      padding: 0 15px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-evenly;
    }
    &__item-title {
       display: block;
@@ -34,7 +35,7 @@
    // .work__item
 
    &__item {
-      flex: 0 0 32%;
+      flex: 0 0 30%;
       height: 151px;
       background-color: #fff;
       font-size: 17px;
@@ -43,6 +44,11 @@
       transform: skewX(-5deg);
       margin: 0px 0px 15px 0px;
       position: relative;
+      @media (max-width: $S) {
+         font-size: 14px;
+         line-height: 18px;
+         padding: 15px;
+      }
       &::before {
          font-style: italic;
          font-weight: 900;

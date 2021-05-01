@@ -45,6 +45,10 @@
    font-size: 85px;
    line-height: 104px;
    color: #fff;
+   @media (max-width: $S) {
+      font-size: 75px;
+      line-height: 85px;
+   }
 }
 
 .secondary-title {
@@ -52,6 +56,10 @@
    font-weight: 800;
    font-size: 25px;
    line-height: 30px;
+   @media (max-width: $S) {
+      font-size: 18px;
+      line-height: 22px;
+   }
 }
 .secondary-title--red {
    color: $red;
@@ -63,11 +71,15 @@
 .gallery {
    display: flex;
    justify-content: space-between;
-   width: 1160px;
+   width: 100%;
+   @media (max-width: $M) {
+      padding: 0 15px;
+      justify-content: space-evenly;
+   }
 
    // .gallery__item
    &__item {
-      flex: 0 0 270px;
+      flex: 0 0 24%;
    }
    &__picture {
       height: 350px;
@@ -91,6 +103,10 @@
       text-align: center;
       color: #fff;
       margin: 25px 0px 0px 0px;
+      @media (max-width: $S) {
+         font-size: 16px;
+         line-height: 22px;
+      }
    }
 }
 

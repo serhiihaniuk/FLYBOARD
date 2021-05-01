@@ -2,10 +2,11 @@
 
 const fullPage = new Swiper(".swiper-container", {
   // Optional parameters
-  direction: "horizontal",
+  direction: "vertical",
   loop: false,
   speed: 800,
   parallax: true,
+  // freeMode: true,
   mousewheel: {
     invert: false,
   },
@@ -53,7 +54,6 @@ function runTabs(sectionName) {
 function tabs(buttons, tabContent, section, sectionName) {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
-      console.log(button);
       const tabId = button.getAttribute(`data-${sectionName}-tab`);
       const currentTab = document.querySelector(tabId);
 

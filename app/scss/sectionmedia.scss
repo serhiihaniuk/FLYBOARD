@@ -37,9 +37,10 @@
 
 .media-grid {
    display: grid;
-   padding: 0px 0px 0px 100px;
-   grid-template-columns: 400px 430px 200px;
+   padding: 0 15px;
+   grid-template-columns: 2fr 2fr 1fr;
    grid-template-rows: 400px;
+   gap: 10px;
    transform: skewX(-4deg);
    margin: 0px 0px 15px 0px;
    // .media-grid_section
@@ -47,26 +48,32 @@
    &_section1 {
       display: grid;
       gap: 10px;
-      grid-template-columns: 190px 190px;
-      grid-template-rows: 190px 190px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
    }
    &_section2 {
       display: grid;
-      grid-template-columns: 420px;
-      grid-template-rows: 390px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
    }
    &_section3 {
       display: grid;
       gap: 10px;
-      grid-template-columns: 190px;
-      grid-template-rows: 190px 190px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
    }
-
+   &__img-small {
+      position: relative;
+   }
    // .media-grid__img
 
    &__img {
       width: 100%;
       height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
    }
 }
 
@@ -103,6 +110,27 @@
       &:hover {
          background: url("../ico/arrows/rr.svg");
       }
+   }
+}
+
+.media-grid__wrapper {
+   border: 5px solid rgb(149, 55, 243);
+
+   @media (min-width: $mob) {
+      width: 310px;
+   }
+
+   @media (min-width: $XS) {
+      width: 500px;
+   }
+   @media (min-width: $S) {
+      width: 700px;
+   }
+   @media (min-width: $M) {
+      width: 920px;
+   }
+   @media (min-width: $L) {
+      width: $content-width + px;
    }
 }
 

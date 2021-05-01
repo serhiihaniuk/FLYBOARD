@@ -10,12 +10,14 @@
 
    //.header__content
    &__content {
-      width: 1170px;
       height: 100%;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: $M) {
+         justify-content: flex-end;
+      }
    }
 
    // .header__logo
@@ -27,11 +29,17 @@
 
    &__logo-link {
       display: block;
+      @media (max-width: $M) {
+         flex: 1 1 auto;
+      }
    }
 
    // .header__menu
 
    &__menu {
+      @media (max-width: $M) {
+         display: none;
+      }
    }
 
    // .header__list
@@ -68,6 +76,7 @@
       font-weight: 800;
       font-size: 17px;
       transition: color 0.3s ease;
+      display: none;
       &:hover {
          color: $red;
       }
@@ -77,6 +86,10 @@
 
    &__order {
       padding: 15px 25px;
+      display: block;
+      @media (max-width: $M) {
+         margin: 0px 35px 0px 0px;
+      }
    }
 
    // .header__language
@@ -94,6 +107,9 @@
       border: none;
       outline: none;
       margin: 0 10px;
+      @media (max-width: $M) {
+         margin: 0px 35px 0px 35px;
+      }
    }
    &__option {
       background-color: black;

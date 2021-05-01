@@ -13,6 +13,10 @@
    &__content {
       width: 770px;
       text-align: center;
+      @media (max-width: $S) {
+         width: 100%;
+         padding: 0 20px;
+      }
    }
    // .promo__title
 
@@ -26,6 +30,10 @@
       transform: translatex(255px);
       transition: all 1s ease;
       opacity: 0;
+      @media (max-width: $S) {
+         font-size: 75px;
+         line-height: 85px;
+      }
    }
 
    // .promo__subtitle
@@ -40,6 +48,11 @@
       transform: translatex(-255px);
       transition: all 1s ease;
       opacity: 0;
+      @media (max-width: $S) {
+         font-size: 45px;
+         line-height: 65px;
+         margin: 50px 0;
+      }
    }
 
    // .promo__text
