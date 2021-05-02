@@ -3,6 +3,66 @@ const page = document.querySelector(".page");
 const swiperContainer = document.querySelector(".swiper-container");
 const screenWrapper = document.querySelector(".screen-wrapper");
 
+//# aside navigation --
+const aside = document.querySelector(".aside-events");
+const asideBody = document.querySelector(".aside-events__body");
+const asideClose = document.querySelector(".aside-events__close");
+const asideBurger = document.querySelector(".header__brgr");
+const asideMenuLinks = document.querySelectorAll(".aside-events__item");
+const prevArrowName = document.querySelector(".prev-screen__name");
+const nextArrowName = document.querySelector(".next-screen__name");
+const screenNames = {
+  0: "Главная",
+  1: "Мероприятия",
+  2: "Виды шоу",
+  3: "Что входит?",
+  4: "Наши фото и видео",
+  5: "Как мы работаем",
+  6: "Скидка для агентств",
+  7: "Соберите Ваше шоу",
+};
+function changeArrowName() {
+  prevArrowName.innerHTML = screenNames[fullPage.realIndex - 1] || "";
+  nextArrowName.innerHTML = screenNames[fullPage.realIndex + 1] || "";
+}
+
+asideBurger.addEventListener("click", () => {
+  aside.classList.add("active");
+  asideBody.classList.add("active");
+});
+
+asideClose.addEventListener("click", () => {
+  asideMenuClose();
+});
+aside.addEventListener("click", (e) => {
+  if (e.target === aside) {
+    asideMenuClose();
+  }
+});
+
+function asideMenuClose() {
+  aside.classList.remove("active");
+  asideBody.classList.remove("active");
+}
+function fullPageMenu() {
+  asideMenuLinks[fullPage.realIndex].classList.add("active");
+  for (let i = 0; i < asideMenuLinks.length; i++) {
+    const currentMenuLink = asideMenuLinks[i];
+    currentMenuLink.addEventListener("click", (e) => {
+      linkRemoveActive();
+      asideMenuClose();
+      fullPage.slideTo(i, 800);
+      currentMenuLink.classList.add("active");
+      e.preventDefault;
+    });
+  }
+}
+function linkRemoveActive() {
+  const menuLinkActive = document.querySelector(".aside-events__item.active");
+  if (menuLinkActive) menuLinkActive.classList.remove("active");
+}
+
+//# fullpage init --
 const breakpoint = window.matchMedia("(min-width:577px)");
 let fullPage = undefined;
 
@@ -37,8 +97,8 @@ function enableSwiper() {
 
     // Navigation arrows
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".next-screen",
+      prevEl: ".prev-screen",
     },
     breakpoints: {
       577: {
@@ -47,7 +107,13 @@ function enableSwiper() {
         freeMode: false,
       },
     },
+    on: {
+      slideChange: function () {
+        changeArrowName();
+      },
+    },
   });
+  fullPageMenu();
 }
 
 breakpoint.addListener(breakpointChecker);
@@ -128,51 +194,4 @@ function tabs(buttons, tabContent, section, sectionName) {
       currentTab.classList.add("active");
     });
   });
-}
-
-//# aside --
-
-const aside = document.querySelector(".aside-events");
-const asideBody = document.querySelector(".aside-events__body");
-const asideClose = document.querySelector(".aside-events__close");
-const asideBurger = document.querySelector(".header__brgr");
-const asideMenuLinks = document.querySelectorAll(".aside-events__item");
-
-asideBurger.addEventListener("click", () => {
-  aside.classList.add("active");
-  asideBody.classList.add("active");
-});
-
-asideClose.addEventListener("click", () => {
-  asideMenuClose();
-});
-aside.addEventListener("click", (e) => {
-  if (e.target === aside) {
-    asideMenuClose();
-  }
-});
-
-function asideMenuClose() {
-  aside.classList.remove("active");
-  asideBody.classList.remove("active");
-}
-
-function fullPageMenu() {
-  asideMenuLinks[fullPage.realIndex].classList.add("active");
-  for (let i = 0; i < asideMenuLinks.length; i++) {
-    const currentMenuLink = asideMenuLinks[i];
-    currentMenuLink.addEventListener("click", (e) => {
-      linkRemoveActive();
-      asideMenuClose();
-      console.log(fullPage.slideTo(i));
-      fullPage.slideTo(i, 800);
-      currentMenuLink.classList.add("active");
-      e.preventDefault;
-    });
-  }
-}
-fullPageMenu();
-function linkRemoveActive() {
-  const menuLinkActive = document.querySelector(".aside-events__item.active");
-  if (menuLinkActive) menuLinkActive.classList.remove("active");
 }

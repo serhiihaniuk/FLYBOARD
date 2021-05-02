@@ -49,7 +49,7 @@
       top: 0;
       width: 100%;
       height: 2px;
-      background-color: $red;
+      background-color: black;
       transform: rotate(45deg) translate(-9px, 17px);
    }
    &::after {
@@ -58,8 +58,16 @@
       top: 0;
       width: 100%;
       height: 2px;
-      background-color: $red;
+      background-color: black;
       transform: rotate(-45deg) translate(-18px, -9px);
+   }
+}
+.aside-events__close:hover {
+   &::before {
+      background-color: $red;
+   }
+   &::after {
+      background-color: $red;
    }
 }
 .aside-events__list {

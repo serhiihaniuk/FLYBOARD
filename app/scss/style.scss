@@ -91,3 +91,86 @@ body {
   flex: 1 0 100%;
   position: relative;
 }
+
+.next-screen {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  cursor: pointer;
+  &:hover {
+    .next-screen__arrow {
+      width: 100%;
+    }
+    .next-screen__name {
+      color: $red;
+    }
+  }
+  @media (max-width: $XS) {
+    display: none;
+  }
+}
+.next-screen__name {
+  color: #ccc;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  transition: color 0.3s ease;
+  height: 24px;
+}
+.next-screen__arrow {
+  width: 70px;
+  height: 17px;
+  text-align: right;
+  transition: all 1s ease;
+  border-bottom: 1px solid red;
+}
+.prev-screen {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  cursor: pointer;
+  &:hover {
+    .prev-screen__arrow {
+      width: 100%;
+    }
+    .prev-screen__name {
+      color: $red;
+    }
+  }
+  @media (max-width: $XS) {
+    display: none;
+  }
+}
+.prev-screen__name {
+  color: #fff;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  transition: color 0.3s ease;
+  height: 24px;
+}
+.prev-screen__arrow {
+  width: 70px;
+  height: 17px;
+  text-align: left;
+  transition: all 1s ease;
+  border-bottom: 1px solid red;
+  margin-left: auto;
+}
+
+.arrow {
+  border: solid $red;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+}
+
+.right {
+  transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+}
