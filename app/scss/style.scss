@@ -50,6 +50,14 @@ body {
   left: 0;
   overflow: hidden;
 }
+.page.mobile {
+  position: static;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
 
 //# fullpage swiper classes
 
@@ -60,17 +68,22 @@ body {
 
 .screen-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   height: 100%;
-  @media (min-width: $XS) {
-    flex-direction: row;
-  }
 }
+
+.screen-wrapper.mobile {
+  display: flex;
+  flex-direction: column;
+}
+
 .screen {
   flex: 1 0 100%;
   position: relative;
-  @media (min-width: $XS) {
-    overflow: hidden;
-  }
+  overflow: hidden;
+}
+.screen.mobile {
+  flex: 1 0 100%;
+  position: relative;
 }

@@ -17,6 +17,7 @@
       background-color: $red;
    }
 }
+//#Footer --
 
 .social {
    display: flex;
@@ -39,6 +40,7 @@
    }
 }
 
+//#Titles --
 .common-title {
    font-style: italic;
    font-weight: 900;
@@ -76,6 +78,7 @@
    color: #fff;
 }
 
+//#Gallery --
 .gallery {
    display: flex;
    justify-content: space-between;
@@ -103,7 +106,7 @@
       height: 350px;
       border: 10px solid rgba(255, 255, 255, 0.5);
       transform: skewX(-5deg);
-      @media (max-width: $XS) {
+      @media (max-width: $mob) {
          height: 300px;
       }
    }
@@ -131,6 +134,7 @@
    }
 }
 
+//#Tabs --
 .tabs {
    // .tabs__button
    &__button {

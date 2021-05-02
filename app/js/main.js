@@ -1,33 +1,69 @@
 //@ sliders --
+const page = document.querySelector(".page");
+const swiperContainer = document.querySelector(".swiper-container");
+const screenWrapper = document.querySelector(".screen-wrapper");
 
-const fullPage = new Swiper(".swiper-container", {
-  wrapperClass: "screen-wrapper",
-  slideClass: "screen",
-  // Optional parameters
-  direction: "vertical",
-  slidesPerView: "auto",
-  loop: false,
+const breakpoint = window.matchMedia("(min-width:577px)");
+let fullPage = undefined;
 
-  speed: 800,
-  parallax: true,
-  freeMode: true,
-  mousewheel: {
-    invert: false,
-  },
+function breakpointChecker() {
+  if (breakpoint.matches === true) {
+    return enableSwiper();
+  } else if (breakpoint.matches === false) {
+    initMobile();
+    if (fullPage !== undefined) {
+      fullPage.destroy(true);
+    }
+    return;
+  }
+}
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    577: {
-      direction: "horizontal",
-      slidesPerView: "auto",
-      freeMode: false,
+function enableSwiper() {
+  initFullpage();
+  fullPage = new Swiper(".swiper-container", {
+    wrapperClass: "screen-wrapper",
+    slideClass: "screen",
+    // Optional parameters
+    direction: "vertical",
+    slidesPerView: "auto",
+    loop: false,
+
+    speed: 800,
+    parallax: true,
+    freeMode: true,
+    mousewheel: {
+      invert: false,
     },
-  },
-});
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      577: {
+        direction: "horizontal",
+        slidesPerView: "auto",
+        freeMode: false,
+      },
+    },
+  });
+}
+
+breakpoint.addListener(breakpointChecker);
+breakpointChecker();
+
+function initFullpage() {
+  page.classList.remove("mobile");
+  swiperContainer.classList.remove("mobile");
+  screenWrapper.classList.remove("mobile");
+}
+
+function initMobile() {
+  page.classList.add("mobile");
+  swiperContainer.classList.add("mobile");
+  screenWrapper.classList.add("mobile");
+}
 
 const photoSlider = new Swiper(".slider-photo", {
   // Optional parameters
