@@ -20,6 +20,13 @@ const fullPage = new Swiper(".swiper-container", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  breakpoints: {
+    577: {
+      direction: "horizontal",
+      slidesPerView: "auto",
+      freeMode: false,
+    },
+  },
 });
 
 const photoSlider = new Swiper(".slider-photo", {
@@ -27,7 +34,8 @@ const photoSlider = new Swiper(".slider-photo", {
   direction: "horizontal",
   loop: false,
   speed: 800,
-  spaceBetween: -500,
+  spaceBetween: 0,
+  slidesPerView: "auto",
 
   navigation: {
     nextEl: ".slider-photo__next",

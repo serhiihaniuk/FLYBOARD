@@ -13,6 +13,9 @@
       flex-direction: column;
       justify-content: space-evenly;
       height: 100%;
+      @media (max-width: $mob) {
+         max-width: 320px;
+      }
    }
    &__tab-wrap {
       position: relative;
@@ -20,6 +23,10 @@
    &__title {
       @media (max-width: $XS) {
          margin: 0px 0px 40px 0px;
+      }
+      @media (max-width: $mob) {
+         max-width: 320px;
+         margin: 15px 0px 15px 15px;
       }
    }
    &__tab-but {
@@ -121,9 +128,7 @@
 }
 
 .media-grid__wrapper {
-   border: 5px solid rgb(149, 55, 243);
-
-   width: 300px;
+   width: 320px;
    padding: 0px 0px 15px 0px;
 
    @media (min-width: $XS) {
