@@ -16,8 +16,10 @@
       height: 100%;
    }
    &__title {
-      @media (max-width: $XS) {
-         margin: 0px 0px 50px 0px;
+      margin: 0px 0px 40px 0px;
+      @media (min-width: $XS) and (max-height: 825px) {
+         margin: 0px 0px 20px 0px;
+         font-size: 50px;
       }
    }
    // .work__items
@@ -38,7 +40,7 @@
 
    &__item {
       flex: 0 0 30%;
-      height: 151px;
+      min-height: 151px;
       background-color: #fff;
       font-size: 17px;
       padding: 30px;
@@ -46,6 +48,9 @@
       transform: skewX(-5deg);
       margin: 0px 0px 15px 0px;
       position: relative;
+      @media screen and (max-height: 825px) {
+         height: auto;
+      }
       @media (max-width: $S) {
          font-size: 14px;
          line-height: 18px;

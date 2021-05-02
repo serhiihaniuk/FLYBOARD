@@ -2,29 +2,40 @@
    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("../img/background/bg7.jpg");
    display: flex;
-   justify-content: center;
-   align-items: center;
+   flex-direction: column;
+   justify-content: space-evenly;
+   // align-items: center;
    @include commonScreen;
    // .discount__wrapper
 
    &__wrapper {
       display: flex;
+      flex: 1 0 auto;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       height: 100%;
+      min-height: 600px;
+      position: relative;
+      @media (min-width: $L) {
+         padding: 70px 0px 0px 0px;
+      }
+   }
+   .discount__common-title {
    }
 
    // .discount__content
 
    &__content {
-      width: 828px;
       text-align: center;
-      flex: 1 1 auto;
-      padding: 90px 0px 0px 0px;
+      width: 70%;
+      margin: 25px 0px 0px 0px;
+      @media (max-width: $L) {
+         width: 95%;
+      }
+
       @media (max-width: $S) {
-         width: 100%;
-         padding: 90px 15px;
+         padding: 60px 15px;
       }
    }
 
@@ -35,9 +46,14 @@
       font-size: 85px;
       line-height: 104px;
       color: $red;
-      @media (max-width: $XS) {
+      @media (min-width: $XS) and (max-height: 825px) {
          font-size: 65px;
-         line-height: 85px;
+         line-height: 75px;
+      }
+
+      @media (max-width: $XS) {
+         font-size: 55px;
+         line-height: 65px;
       }
    }
    // .discount__text
@@ -48,5 +64,9 @@
       font-size: 25px;
       line-height: 158.47%;
       color: #fff;
+      @media (max-width: $XS) {
+         font-size: 22px;
+         line-height: 110%;
+      }
    }
 }

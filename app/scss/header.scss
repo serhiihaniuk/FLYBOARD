@@ -7,6 +7,9 @@
    background-color: rgba($color: #000300, $alpha: 0.5);
    z-index: 10;
    color: #fff;
+   @media screen and (max-height: 825px) {
+      height: 80px;
+   }
 
    //.header__content
    &__content {

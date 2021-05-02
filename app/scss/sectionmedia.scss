@@ -3,6 +3,7 @@
       url("../img/background/bg5.jpg");
 
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
    @include commonScreen;
@@ -11,7 +12,8 @@
    &__wrapper {
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      flex: 1 0 auto;
+      justify-content: center;
       height: 100%;
       @media (max-width: $mob) {
          max-width: 320px;
@@ -21,12 +23,15 @@
       position: relative;
    }
    &__title {
-      @media (max-width: $XS) {
-         margin: 0px 0px 40px 0px;
+      margin: 0px 0px 40px 0px;
+      @media (min-width: $XS) and (max-height: 825px) {
+         font-size: 45px;
+         margin: 0px 0px 15px 0px;
       }
+
       @media (max-width: $mob) {
          max-width: 320px;
-         margin: 15px 0px 15px 15px;
+         margin: 15px 0px 35px 15px;
       }
    }
    &__tab-but {
@@ -35,6 +40,10 @@
 
 .media__tab-cont {
    display: none;
+   margin: 30px 0px 0px 0px;
+   @media (max-width: $mob) {
+      margin: 0;
+   }
 }
 
 .media__tab-cont.active {
@@ -50,6 +59,9 @@
    gap: 10px;
    transform: skewX(-4deg);
    margin: 0px 0px 15px 0px;
+   @media screen and (max-height: 825px) {
+      grid-template-rows: 350px;
+   }
    @media (max-width: $XS) {
       margin: 30px 0px 0px 0px;
       grid-template-columns: 1fr;

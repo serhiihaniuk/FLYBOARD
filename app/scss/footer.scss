@@ -35,4 +35,7 @@
    @media (max-width: $XS) {
       display: none;
    }
+   @media screen and (max-height: 725px) {
+      display: none;
+   }
 }
