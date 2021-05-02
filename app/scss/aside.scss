@@ -1,0 +1,129 @@
+.aside-events {
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+   z-index: -1;
+   padding: 42px 100px;
+
+   opacity: 0;
+   transition: all 0.3s ease;
+}
+.aside-events.active {
+   z-index: 25;
+   opacity: 1;
+   transition: all 0.3s ease;
+}
+.aside-events__body {
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 500px;
+   height: 100%;
+   background-color: #fff;
+   z-index: 15;
+   padding: 42px 100px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   justify-content: space-between;
+   text-align: right;
+   transform: translateX(110%);
+   transition: transform 0.3s ease;
+}
+.aside-events__body.active {
+   transform: translateX(0);
+   transition: transform 0.3s ease;
+}
+.aside-events__close {
+   width: 22px;
+   height: 22px;
+   position: relative;
+   cursor: pointer;
+   margin-left: auto;
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $red;
+      transform: rotate(45deg) translate(-9px, 17px);
+   }
+   &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $red;
+      transform: rotate(-45deg) translate(-18px, -9px);
+   }
+}
+.aside-events__list {
+   font-style: italic;
+   font-weight: 800;
+   font-size: 20px;
+   line-height: 49px;
+   flex: 1 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   margin: 0px 0px 100px 0px;
+}
+.aside-events__item {
+   transition: all 0.3s ease;
+   padding: 0px 0px 0px 0px;
+   &::after {
+      transition: all 0.3s ease;
+   }
+}
+.aside-events__item.active {
+   color: $red;
+   position: relative;
+   padding: 0px 40px 0px 0px;
+   transition: all 0.3s ease;
+
+   &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 30px;
+      height: 2px;
+      background-color: $red;
+      transition: all 0.3s ease;
+   }
+}
+
+.aside-events__item:hover {
+   color: $red;
+   position: relative;
+   padding: 0px 40px 0px 0px;
+   transition: all 0.3s ease;
+
+   &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 30px;
+      height: 2px;
+      background-color: $red;
+      transition: all 0.3s ease;
+   }
+}
+.aside-events__order {
+   margin: 0px 0px 30px 0px;
+}
+.common-button {
+}
+.aside-events__social > .social__link {
+   color: rgba(204, 204, 204, 0.713);
+}
+
+.aside-events__social > .social__link:hover {
+   color: $red;
+}
