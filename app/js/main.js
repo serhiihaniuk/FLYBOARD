@@ -81,6 +81,7 @@ function breakpointChecker() {
 function enableSwiper() {
   initFullpage();
   fullPage = new Swiper(".swiper-container", {
+    init: false,
     wrapperClass: "screen-wrapper",
     slideClass: "screen",
     // Optional parameters
@@ -110,9 +111,12 @@ function enableSwiper() {
     on: {
       slideChange: function () {
         changeArrowName();
+        linkRemoveActive();
+        asideMenuLinks[fullPage.realIndex].classList.add("active");
       },
     },
   });
+  fullPage.init();
   fullPageMenu();
 }
 
@@ -150,11 +154,6 @@ const photoSlider = new Swiper(".slider-photo", {
     bulletActiveClass: "swiper-photo-bullet-active",
     clickable: true,
   },
-  // breakpoints: {
-  //   577: {
-  //     spaceBetween: -1000,
-  //   },
-  // },
 });
 
 //# tabs --
