@@ -32,6 +32,10 @@
    transform: translateX(110%);
    transition: transform 0.3s ease;
    overflow-y: auto;
+   @media (max-width: 820px) {
+      width: 100%;
+      padding: 36px 25px;
+   }
 }
 .order__body.active {
    transform: translateX(0);
@@ -81,4 +85,33 @@
 
 .order__form {
    margin: 40px 0px 0px 0px;
+}
+
+.order__select {
+   margin: 20px 0px 40px 0px;
+}
+.order__extra {
+   margin: 0px 0px 40px 0px;
+}
+
+.order__pick {
+   @media (max-width: 650px) {
+      flex-direction: column;
+      align-items: center;
+   }
+}
+
+.order__pickwrap {
+   @media (max-width: $XS) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+}
+
+.order__tab-cont.active {
+   display: block;
+}
+.order__tab-cont {
+   display: none;
 }

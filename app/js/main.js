@@ -167,6 +167,7 @@ runTabs("show");
 runTabs("media");
 runTabs("info");
 runTabs("gather");
+runTabs("order");
 
 const controls = document.querySelector(".slider-photo__controls");
 function runTabs(sectionName) {
