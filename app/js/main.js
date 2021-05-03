@@ -49,11 +49,11 @@ function fullPageMenu() {
   for (let i = 0; i < asideMenuLinks.length; i++) {
     const currentMenuLink = asideMenuLinks[i];
     currentMenuLink.addEventListener("click", (e) => {
+      e.preventDefault;
       linkRemoveActive();
       asideMenuClose();
       fullPage.slideTo(i, 800);
       currentMenuLink.classList.add("active");
-      e.preventDefault;
     });
   }
 }

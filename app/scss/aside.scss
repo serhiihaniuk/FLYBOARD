@@ -84,6 +84,7 @@
 .aside-events__item {
    transition: all 0.3s ease;
    padding: 0px 0px 0px 0px;
+   cursor: pointer;
    &::after {
       transition: all 0.3s ease;
    }

@@ -54,6 +54,7 @@ function modal(options) {
       modalWindow.classList.remove("active");
       modalWindow.classList.add("closing");
       setTimeout(() => {
+        setContent(" ");
         modalWindow.classList.remove("closing");
       }, 300);
     }
