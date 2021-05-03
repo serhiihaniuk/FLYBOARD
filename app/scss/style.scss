@@ -31,6 +31,8 @@ $redlight: #f03e45;
 @import "discount";
 @import "gather";
 @import "aside";
+@import "form";
+@import "order";
 
 body {
   font-family: Montserrat;
@@ -41,7 +43,9 @@ body {
   line-height: 27px;
   background-color: rgb(1, 1, 31);
 }
-
+button {
+  cursor: pointer;
+}
 .wrapper {
   min-height: 100%;
 }

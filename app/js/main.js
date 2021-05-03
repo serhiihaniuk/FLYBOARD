@@ -200,3 +200,30 @@ function tabs(buttons, tabContent, section, sectionName) {
     });
   });
 }
+
+//# promo order
+
+const orderHeaderBtn = document.querySelector(".header__order");
+const orderAside = document.querySelector(".order");
+const orderAsideBody = document.querySelector(".order__body");
+const orderAsideClose = document.querySelector(".order__close");
+
+orderHeaderBtn.addEventListener("click", (e) => {
+  e.preventDefault;
+  orderAside.classList.add("active");
+  orderAsideBody.classList.add("active");
+});
+
+orderAsideClose.addEventListener("click", () => {
+  orderMenuClose();
+});
+orderAside.addEventListener("click", (e) => {
+  if (e.target === orderAside) {
+    asideMenuClose();
+  }
+});
+
+function orderMenuClose() {
+  orderAside.classList.remove("active");
+  orderAsideBody.classList.remove("active");
+}

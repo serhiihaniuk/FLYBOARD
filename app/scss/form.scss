@@ -1,0 +1,270 @@
+.form {
+   font-style: normal;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 24px;
+}
+
+.form__title {
+   font-style: italic;
+   font-weight: 800;
+   font-size: 17px;
+   line-height: 21px;
+   color: $red;
+   margin: 0px 0px 20px 0px;
+}
+
+.form__type {
+   display: flex;
+   flex-direction: column;
+}
+.form__radio {
+   margin: 0px 0px 10px 0px;
+   padding-left: 30px;
+   position: relative;
+   cursor: pointer;
+}
+.form__extra {
+   display: flex;
+   flex-direction: column;
+}
+.form__check {
+   margin: 0px 0px 10px 0px;
+   padding-left: 30px;
+   position: relative;
+}
+
+.form__select {
+   cursor: pointer;
+   appearance: none;
+
+   height: 45px;
+   border-radius: 100px;
+   border: 2px solid rgba(0, 0, 0, 0.3);
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 18px;
+   padding: 13px 20px;
+   position: relative;
+}
+.select-quantity {
+   width: 439px;
+}
+.select {
+   position: relative;
+   &::after {
+      content: "";
+      display: block;
+      width: 26px;
+      height: 12px;
+      background-color: red;
+      background: url("../ico/select.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 10px;
+      top: 20%;
+   }
+}
+
+.form__select:focus {
+   box-shadow: 0 0 2px 1px $red;
+   outline: #fff;
+}
+
+input[type="checkbox"] {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+}
+input[type="radio"] {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+}
+
+.radio {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 20px;
+   height: 20px;
+   border: 2px solid rgba(0, 0, 0, 0.3);
+   border-radius: 50%;
+}
+input[type="radio"]:checked + .radio {
+   border: 2px solid $red;
+}
+input[type="radio"]:checked + .radio::after {
+   content: "";
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 10px;
+   height: 10px;
+   background-color: $red;
+   border-radius: 100%;
+}
+input[type="radio"]:focus + .radio {
+   box-shadow: 0 0 2px 1px $red;
+}
+
+.checkbox {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 20px;
+   height: 20px;
+   border: 2px solid rgba(0, 0, 0, 0.3);
+   cursor: pointer;
+}
+input[type="checkbox"]:checked + .checkbox {
+   border: 2px solid $red;
+   background: $red url("../ico/conf.svg");
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:focus + .checkbox {
+   box-shadow: 0 0 2px 1px $red;
+}
+
+.select-area {
+   width: 301px;
+}
+.form__info {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.input-text {
+   cursor: pointer;
+   appearance: none;
+   width: 301px;
+   height: 45px;
+   border-radius: 100px;
+   border: 2px solid rgba(0, 0, 0, 0.3);
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 18px;
+   padding: 13px 20px;
+   position: relative;
+   margin: 0px 0px 15px 0px;
+   cursor: pointer;
+}
+
+.input-text:focus {
+   outline: #fff;
+   box-shadow: 0 0 2px 1px $red;
+}
+
+.datepick {
+   appearance: none;
+   width: 143px;
+   height: 45px;
+   border-radius: 100px;
+   border: 2px solid rgba(0, 0, 0, 0.3);
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 17px;
+   line-height: 18px;
+   padding: 13px 20px;
+   position: relative;
+   outline: #fff;
+   background: url("../ico/select.svg");
+   background-position: 105px 15px;
+   background-repeat: no-repeat;
+   margin: 0px 0px 15px 0px;
+   cursor: pointer;
+}
+
+.timepick {
+   appearance: none;
+   width: 143px;
+   height: 45px;
+   border-radius: 100px;
+   border: 2px solid rgba(0, 0, 0, 0.3);
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 18px;
+   padding: 13px 0 13px 20px;
+   position: relative;
+   outline: #fff;
+   background: url("../ico/select.svg");
+   background-position: 105px 15px;
+   background-repeat: no-repeat;
+   cursor: pointer;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+   display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+   opacity: 0;
+}
+[type="time"]::-webkit-inner-spin-button {
+   display: none;
+}
+[type="time"]::-webkit-calendar-picker-indicator {
+   opacity: 0;
+}
+
+.input-comment {
+   cursor: pointer;
+   appearance: none;
+   width: 301px;
+   height: 72px;
+   border-radius: 10px;
+   border: 2px solid rgba(0, 0, 0, 0.3);
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 18px;
+   padding: 13px 13px;
+   position: relative;
+
+   cursor: pointer;
+   resize: none;
+}
+.input-comment:focus {
+   outline: #fff;
+   box-shadow: 0 0 2px 1px $red;
+}
+
+.form-button {
+   color: #fff;
+   text-transform: uppercase;
+   font-style: italic;
+   font-weight: bold;
+   font-size: 12px;
+   line-height: 15px;
+   background-color: $redlight;
+   box-shadow: 0px 5px 5px rgba(204, 33, 40, 0.3);
+   border-radius: 100px;
+   white-space: nowrap;
+   padding: 15px 10px;
+   height: 45px;
+   width: 48%;
+   outline: none;
+   border: none;
+   transition: background-color 0.3s ease;
+   align-self: flex-end;
+   cursor: pointer;
+   &:hover {
+      background-color: $red;
+   }
+}

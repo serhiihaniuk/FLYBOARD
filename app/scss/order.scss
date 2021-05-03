@@ -1,0 +1,84 @@
+.order {
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+   z-index: -1;
+   padding: 42px 100px;
+   opacity: 0;
+   transition: all 0.3s ease;
+}
+.order.active {
+   z-index: 25;
+   opacity: 1;
+   transition: all 0.3s ease;
+}
+
+.order__body {
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 820px;
+   height: 100%;
+   background-color: #fff;
+   z-index: 15;
+   padding: 36px 100px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   text-align: right;
+   transform: translateX(110%);
+   transition: transform 0.3s ease;
+   overflow-y: auto;
+}
+.order__body.active {
+   transform: translateX(0);
+   transition: transform 0.3s ease;
+}
+.order__top {
+   display: flex;
+   width: 100%;
+   text-align: center;
+   align-items: center;
+}
+.order__title {
+   font-style: italic;
+   font-weight: 800;
+   font-size: 25px;
+   line-height: 30px;
+   flex: 1 0 auto;
+}
+.order__close {
+   width: 22px;
+   height: 22px;
+   position: relative;
+   cursor: pointer;
+   margin-left: auto;
+   font-size: 22px;
+   &:hover {
+      color: $red;
+   }
+}
+
+.order__content {
+   flex: 1 0 auto;
+   text-align: left;
+}
+.order__tabs {
+   margin: 30px 0px 30px 0px;
+}
+.order__tab-but {
+   color: #000;
+   &:hover {
+      color: #fff;
+   }
+}
+.order__tab-but.active {
+   color: #fff;
+}
+
+.order__form {
+   margin: 40px 0px 0px 0px;
+}
