@@ -115,3 +115,34 @@
 .order__tab-cont {
    display: none;
 }
+
+.order__thank {
+   flex: 1 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.order__thank-img {
+   width: 50px;
+   height: 50px;
+   background: url("../ico/Ok.svg");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+.order__thank-text {
+   text-align: center;
+   width: 100%;
+   max-width: 502px;
+   font-style: italic;
+   font-weight: 800;
+   font-size: 25px;
+   line-height: 50px;
+   margin: 30px;
+}
+
+.order__thank-btn {
+   width: 185px;
+   height: 45px;
+}

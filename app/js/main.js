@@ -207,10 +207,32 @@ function tabs(buttons, tabContent, section, sectionName) {
 const orderHeaderBtn = document.querySelector(".header__order");
 const orderAside = document.querySelector(".order");
 const orderAsideBody = document.querySelector(".order__body");
+const orderAsideContent = document.querySelector(".order__content");
+const orderAsideTitle = document.querySelector(".order__title");
 const orderAsideClose = document.querySelector(".order__close");
+const orderAsideBtn = document.querySelector(".aside-events__order");
+const makeOrderBtns = document.querySelectorAll(".form-button");
+const orderThank = `
+   
+    <div class="order__thank">
+        <div class="order__thank-img"></div>
+        <div class="order__thank-text">
+            Спасибо, что вы выбрали нас!
+            Наш оператор свяжется с вами,
+            после чего Ваши данные занесутся
+            в нашу базу
+        </div>
+        <button class="common-button order__thank-btn">На главную</button>
+    </div>`;
 
 orderHeaderBtn.addEventListener("click", (e) => {
   e.preventDefault;
+  orderAside.classList.add("active");
+  orderAsideBody.classList.add("active");
+});
+orderAsideBtn.addEventListener("click", (e) => {
+  e.preventDefault;
+  asideMenuClose();
   orderAside.classList.add("active");
   orderAsideBody.classList.add("active");
 });
@@ -228,3 +250,18 @@ function orderMenuClose() {
   orderAside.classList.remove("active");
   orderAsideBody.classList.remove("active");
 }
+
+makeOrderBtns.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault;
+    orderAsideTitle.innerHTML = "";
+    orderAsideBody.removeChild(orderAsideContent);
+    orderAsideBody.insertAdjacentHTML("beforeend", orderThank);
+    const goMain = orderAsideBody.querySelector(".order__thank-btn");
+    console.log(goMain);
+    goMain.addEventListener("click", (e) => {
+      orderMenuClose();
+      fullPage.slideTo(0, 800);
+    });
+  });
+});
