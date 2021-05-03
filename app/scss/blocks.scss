@@ -79,8 +79,11 @@
 }
 
 //#Gallery --
-.gallery {
+.gallery.active {
    display: flex;
+}
+.gallery {
+   display: none;
    justify-content: space-between;
    width: 100%;
    @media (max-width: $M) {
