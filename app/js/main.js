@@ -63,13 +63,18 @@ function linkRemoveActive() {
 }
 
 //# fullpage init --
-const breakpoint = window.matchMedia("(min-width:577px)");
+const breakpointWidth = window.matchMedia("(min-width:577px)");
+const breakpointHeight = window.matchMedia("(min-height:700px)");
+
 let fullPage = undefined;
 
 function breakpointChecker() {
-  if (breakpoint.matches === true) {
+  if (breakpointWidth.matches === true && breakpointHeight.matches === true) {
     return enableSwiper();
-  } else if (breakpoint.matches === false) {
+  } else if (
+    breakpointWidth.matches === false ||
+    breakpointHeight.matches === false
+  ) {
     initMobile();
     if (fullPage !== undefined) {
       fullPage.destroy(true);
@@ -120,7 +125,8 @@ function enableSwiper() {
   fullPageMenu();
 }
 
-breakpoint.addListener(breakpointChecker);
+breakpointWidth.addListener(breakpointChecker);
+breakpointHeight.addListener(breakpointChecker);
 breakpointChecker();
 
 function initFullpage() {

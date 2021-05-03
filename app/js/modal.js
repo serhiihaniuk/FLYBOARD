@@ -1,4 +1,4 @@
-function createModal() {
+function createModal(options) {
   const body = document.querySelector("body");
   const modal = document.createElement("div");
   modal.classList.add("modal");
@@ -9,21 +9,34 @@ function createModal() {
   const modalClose = document.createElement("div");
   modalClose.classList.add("modal__close");
 
-  const modalImg = document.createElement("img");
-  modalImg.classList.add("modal__img");
-  modalBody.appendChild(modalImg);
+  if (options.type == "video") {
+    const iFrame = `<iframe src="" 
+                    title="YouTube 
+                    video player" frameborder="0" 
+                    allow="accelerometer; autoplay; 
+                    clipboard-write; encrypted-media; 
+                    gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>`;
+    modalBody.insertAdjacentHTML("afterbegin", iFrame);
+  }
+  if (options.type == "photo") {
+    const modalImg = document.createElement("img");
+    modalImg.classList.add("modal__img");
+    modalBody.appendChild(modalImg);
+  }
+
   modalBody.appendChild(modalClose);
   modal.appendChild(modalBody);
-
   body.appendChild(modal);
 
   return modal;
 }
 
 function modal(options) {
-  const modalWindow = createModal();
+  const modalWindow = createModal(options);
   const modalBody = modalWindow.children[0];
-  const modalImg = modalBody.children[0];
+  const modalMedia = modalBody.children[0];
 
   function open() {
     const isOpening = modalWindow.classList.contains("opening");
@@ -46,10 +59,15 @@ function modal(options) {
     }
   }
   function setContent(url) {
-    modalImg.setAttribute("src", `${url}`);
+    if (options.type == "video") {
+      modalMedia.setAttribute("src", `https://www.youtube.com/embed/${url}`);
+    }
+    if (options.type == "photo") {
+      modalMedia.setAttribute("src", `${url}`);
+    }
   }
   modalWindow.addEventListener("click", (e) => {
-    if (e.target !== modalImg) close();
+    if (e.target !== modalMedia) close();
   });
   return {
     open,
@@ -58,9 +76,15 @@ function modal(options) {
   };
 }
 
-const imgMod = modal();
-const images = document.querySelectorAll(".media-grid__img");
+const imgMod = modal({
+  type: "photo",
+});
+const videoMod = modal({
+  type: "video",
+});
+
 const imgContainer = document.querySelectorAll(".media-grid__img-small");
+const videoContainer = document.querySelectorAll(".media-grid__video");
 
 imgContainer.forEach((item) => {
   item.addEventListener("click", (e) => {
@@ -68,5 +92,13 @@ imgContainer.forEach((item) => {
     const url = image.getAttribute("src");
     imgMod.setContent(url);
     imgMod.open();
+  });
+});
+
+videoContainer.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const url = item.getAttribute("data-url");
+    videoMod.setContent(url);
+    videoMod.open();
   });
 });
