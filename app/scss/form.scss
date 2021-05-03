@@ -50,7 +50,8 @@
    position: relative;
 }
 .select-quantity {
-   width: 439px;
+   width: 90%;
+   max-width: 439px;
    @media (max-width: $XS) {
       width: 100%;
    }

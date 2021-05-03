@@ -1,0 +1,145 @@
+.request {
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+   z-index: -1;
+   padding: 42px 100px;
+   opacity: 0;
+   transition: all 0.3s ease;
+}
+.request.active {
+   z-index: 25;
+   opacity: 1;
+   transition: all 0.3s ease;
+}
+
+.request__body {
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 501px;
+   height: 100%;
+   background-color: #fff;
+   z-index: 15;
+   padding: 36px 100px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   text-align: right;
+   transform: translateX(110%);
+   transition: transform 0.3s ease;
+   overflow-y: auto;
+   @media (max-width: 501px) {
+      width: 100%;
+      padding: 36px 25px;
+   }
+}
+.request__body.active {
+   transform: translateX(0);
+   transition: transform 0.3s ease;
+}
+.request__top {
+   display: flex;
+   width: 100%;
+   text-align: center;
+   align-items: center;
+}
+.request__title {
+   font-style: italic;
+   font-weight: 800;
+   font-size: 25px;
+   line-height: 30px;
+   flex: 1 0 auto;
+}
+.request__close {
+   width: 22px;
+   height: 22px;
+   position: relative;
+   cursor: pointer;
+   margin-left: auto;
+   font-size: 22px;
+   &:hover {
+      color: $red;
+   }
+}
+
+.request__content {
+   flex: 1 0 auto;
+   text-align: left;
+}
+.request__tabs {
+   margin: 30px 0px 30px 0px;
+}
+.request__tab-but {
+   color: #000;
+   &:hover {
+      color: #fff;
+   }
+}
+.request__tab-but.active {
+   color: #fff;
+}
+
+.request__form {
+   margin: 40px 0px 0px 0px;
+}
+
+.request__select {
+   margin: 20px 0px 40px 0px;
+}
+.request__extra {
+   margin: 0px 0px 40px 0px;
+}
+
+.request__pick {
+   flex-direction: column;
+   align-items: center;
+}
+
+.request__pickwrap {
+   @media (max-width: $XS) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+}
+
+.request__thank {
+   flex: 1 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.request__thank-img {
+   width: 50px;
+   height: 50px;
+   background: url("../ico/Ok.svg");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+.request__thank-text {
+   text-align: center;
+   width: 100%;
+   max-width: 502px;
+   font-style: italic;
+   font-weight: 800;
+   font-size: 25px;
+   line-height: 50px;
+   margin: 30px;
+}
+
+.request__thank-btn {
+   width: 185px;
+   height: 45px;
+}
+
+.request-button {
+   width: 100%;
+   align-self: center;
+   margin: 15px 0px 0px 0px;
+}

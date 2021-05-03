@@ -5,6 +5,7 @@
    justify-content: center;
    align-items: center;
    @include commonScreen;
+   overflow-y: auto;
 
    // .gather__wrapper
 
@@ -21,8 +22,13 @@
    // .gather__title
 
    &__title {
+      margin: 20px 0px 40px 0px;
+      @media (min-width: $XS) and (max-height: 825px) {
+         margin: 0px 0px 20px 0px;
+         font-size: 60px;
+      }
       @media (max-width: $XS) {
-         margin: 0px 0px 25px 0px;
+         margin: 20px 0px 40px 0px;
       }
    }
 
@@ -48,6 +54,7 @@
    // .gather__tab-cont
 
    &__tab-cont {
+      margin: 30px 0px 0px 0px;
    }
 
    // .gather__form
@@ -62,6 +69,7 @@
       justify-content: space-between;
       margin: 0px 0px 15px 0px;
       padding: 0 15px;
+
       @media (max-width: $XS) {
          flex-wrap: wrap;
          justify-content: center;
@@ -72,14 +80,18 @@
 
    &__item {
       padding: 30px;
-      min-height: 320px;
+
       max-width: 590px;
       flex: 0 0 49%;
       transform: skewX(-5deg);
       background-color: #fff;
+      @media (max-width: $M) {
+         transform: skewX(0);
+         padding: 10px;
+      }
       @media (max-width: $XS) {
          flex: 0 0 90%;
-         transform: skewX(0);
+
          margin: 0px 0px 10px 0px;
       }
    }
@@ -98,4 +110,25 @@
 
 .gather__tab-cont.active {
    display: block;
+}
+
+.gather__item-title {
+   display: block;
+   margin: 0px 0px 30px 0px;
+}
+
+.gather__wrapper.container {
+   @media (max-width: $M) {
+      width: 100%;
+      padding: 0 10px;
+   }
+}
+
+.gather__select.select {
+   position: relative;
+   &::after {
+      @media (max-width: $M) {
+         background: #fff;
+      }
+   }
 }

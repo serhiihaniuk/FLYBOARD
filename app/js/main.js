@@ -49,7 +49,7 @@ function fullPageMenu() {
   for (let i = 0; i < asideMenuLinks.length; i++) {
     const currentMenuLink = asideMenuLinks[i];
     currentMenuLink.addEventListener("click", (e) => {
-      e.preventDefault;
+      e.preventDefault();
       linkRemoveActive();
       asideMenuClose();
       fullPage.slideTo(i, 800);
@@ -212,8 +212,15 @@ const orderAsideTitle = document.querySelector(".order__title");
 const orderAsideClose = document.querySelector(".order__close");
 const orderAsideBtn = document.querySelector(".aside-events__order");
 const makeOrderBtns = document.querySelectorAll(".form-button");
-const orderThank = `
-   
+
+const requestAside = document.querySelector(".request");
+const requestAsideBody = document.querySelector(".request__body");
+const requestAsideContent = document.querySelector(".request__content");
+const requestAsideClose = document.querySelector(".request__close");
+const requestBtn = document.querySelector(".request-button");
+const gatherConfirmBtns = document.querySelectorAll(".gather__confirm");
+
+const orderThank = `  
     <div class="order__thank">
         <div class="order__thank-img"></div>
         <div class="order__thank-text">
@@ -226,12 +233,12 @@ const orderThank = `
     </div>`;
 
 orderHeaderBtn.addEventListener("click", (e) => {
-  e.preventDefault;
+  e.preventDefault();
   orderAside.classList.add("active");
   orderAsideBody.classList.add("active");
 });
 orderAsideBtn.addEventListener("click", (e) => {
-  e.preventDefault;
+  e.preventDefault();
   asideMenuClose();
   orderAside.classList.add("active");
   orderAsideBody.classList.add("active");
@@ -251,17 +258,50 @@ function orderMenuClose() {
   orderAsideBody.classList.remove("active");
 }
 
-makeOrderBtns.forEach((button) => {
+function requestMenuClose() {
+  requestAside.classList.remove("active");
+  requestAsideBody.classList.remove("active");
+}
+
+//* open send request aside menu after pressing "send request btn"
+gatherConfirmBtns.forEach((button) => {
   button.addEventListener("click", (e) => {
-    e.preventDefault;
-    orderAsideTitle.innerHTML = "";
-    orderAsideBody.removeChild(orderAsideContent);
-    orderAsideBody.insertAdjacentHTML("beforeend", orderThank);
-    const goMain = orderAsideBody.querySelector(".order__thank-btn");
-    console.log(goMain);
-    goMain.addEventListener("click", (e) => {
-      orderMenuClose();
-      fullPage.slideTo(0, 800);
-    });
+    e.preventDefault();
+    requestAside.classList.add("active");
+    requestAsideBody.classList.add("active");
   });
 });
+
+//* close send request aside menu
+requestAsideClose.addEventListener("click", () => {
+  requestMenuClose();
+});
+
+//* show thanks screen after order
+makeOrderBtns.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    showThanks();
+  });
+});
+
+function showThanks() {
+  orderAsideTitle.innerHTML = "";
+  orderAsideBody.removeChild(orderAsideContent);
+  orderAsideBody.insertAdjacentHTML("beforeend", orderThank);
+  requestAsideBody.removeChild(requestAsideContent);
+  requestAsideBody.insertAdjacentHTML("beforeend", orderThank);
+  const goMainOrder = orderAsideBody.querySelector(".order__thank-btn");
+  const goMainRequest = requestAsideBody.querySelector(".order__thank-btn");
+
+  goMainOrder.addEventListener("click", (e) => {
+    orderMenuClose();
+    fullPage.slideTo(0, 800);
+  });
+  goMainRequest.addEventListener("click", (e) => {
+    console.log("asd");
+
+    requestMenuClose();
+    fullPage.slideTo(0, 800);
+  });
+}

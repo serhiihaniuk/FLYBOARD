@@ -492,6 +492,93 @@
             
           </div>
         </div>
+         <!-- % = = = = SEND REQUEST -->
+         <div class="request ">
+          <div class="request__body ">
+            <div class="request__top">
+              <h3 class="request__title"></h3>
+              <div class="request__close">&#10005</div>
+            </div>
+            <div class="request__content">
+              <div class="request__tabs"> 
+                <div class="request__form">
+                
+                  <form
+                    action="post"
+                    class="form"  
+                  >
+                    
+                    <div class="form__info request__pick">
+                      <div class="request__pickwrap">
+                        <label class="datepick-label"
+                          ><input
+                            placeholder="Дата"
+                            type="text"
+                            onfocus="(this.type='date')"
+                            name="datepick"
+                            class="datepick"
+                        /></label>
+                        <label class="timepick-label"
+                          ><input
+                            type="text"
+                            onfocus="(this.type='time')"
+                            name="timepick"
+                            class="timepick"
+                            placeholder="Время"
+                        /></label>
+                      </div>
+                      <label class="select"
+                        ><select class="form__select select-area">
+                          <option selected>Акватория</option>
+                          <option value="1">Озеро</option>
+                          <option value="2">Бассейн</option>
+                          <option value="3">Речка</option>
+                        </select></label
+                      >
+                      <label
+                        ><input
+                          class="input-text"
+                          type="text"
+                          name="place"
+                          placeholder="Месторасположение"
+                      /></label>
+                      <label
+                        ><input
+                          class="input-text"
+                          type="text"
+                          name="name"
+                          placeholder="Имя"
+                      /></label>
+                      <label
+                        ><input
+                          class="input-text"
+                          type="tel"
+                          name="tel"
+                          placeholder="Телефон"
+                      /></label>
+                      <label
+                        ><input
+                          class="input-text"
+                          type="text"
+                          name="email"
+                          placeholder="Электронная почта"
+                      /></label>
+           
+                      <textarea
+                        name="comment"
+                        placeholder="Комментарий"
+                        class="input-comment"
+                      ></textarea>
+                      <button class="form-button request-button">Отправить заявку</button>
+                    </div>
+                  </form>
+                 
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
         <div class="swiper-container">
           <div class="screen-wrapper">
             <!-- % = = = = SCREEN1 PROMO -->
@@ -1225,14 +1312,66 @@
                       <form action="" class="gather__form">
                         <div class="gather__items">
                           <div class="gather__item">
-                            <h3 class="secondary-title secondary-title--red">
+                            <h3 class="secondary-title secondary-title--red gather__item-title">
                               Выберите вид шоу
                             </h3>
+                            <div class="form__type ">
+                             
+                              <label class="form__radio"
+                                ><input type="radio" name="showtype" />Акробатическое
+                                шоу<span class="radio"></span
+                              ></label>
+                              <label class="form__radio"
+                                ><input type="radio" name="showtype" />Костюмированное
+                                шоу<span class="radio"></span
+                              ></label>
+                              <label class="form__radio"
+                                ><input type="radio" name="showtype" />Детское шоу<span
+                                  class="radio"
+                                ></span
+                              ></label>
+                            </div>
+                            <label class="select gather__select"
+                              ><select
+                                class="form__select select-quantity "
+                              >
+                                <option selected>Количество флайбордистов</option>
+                                <option value="1">Один</option>
+                                <option value="2">Два</option>
+                                <option value="3">Три</option>
+                              </select></label
+                            >
                           </div>
                           <div class="gather__item">
-                            <h3 class="secondary-title secondary-title--red">
+                            <h3 class="secondary-title secondary-title--red gather__item-title">
                               Дополнительно
                             </h3>
+                            <div class="form__extra order__extra">
+                              
+                              <label class="form__check"
+                                ><input type="checkbox" />Цветной дым<span
+                                  class="checkbox"
+                                ></span
+                              ></label>
+                              <label class="form__check"
+                                ><input type="checkbox" />Пошив костюмов<span
+                                  class="checkbox"
+                                ></span
+                              ></label>
+                              <label class="form__check"
+                                ><input type="checkbox" />Уникальный сценарий под ваше
+                                мероприятие<span class="checkbox"></span
+                              ></label>
+                              <label class="form__check"
+                                ><input type="checkbox" />Полет с участником
+                                мероприятия<span class="checkbox"> </span
+                              ></label>
+                              <label class="form__check"
+                                ><input type="checkbox" />Аренда флайборда<span
+                                  class="checkbox"
+                                ></span
+                              ></label>
+                            </div>
                           </div>
                         </div>
                         <button class="gather__confirm common-button">
@@ -1242,9 +1381,144 @@
                     </div>
 
                     <!-- %  --- gather tab 2 -->
-                    <div class="gather__tab-cont" id="gather-tab-second"></div>
+                    <div class="gather__tab-cont" id="gather-tab-second"><form action="" class="gather__form">
+                      <div class="gather__items">
+                        <div class="gather__item">
+                          <h3 class="secondary-title secondary-title--red gather__item-title">
+                            Выберите вид шоу
+                          </h3>
+                          <div class="form__type ">
+                           
+                            <label class="form__radio"
+                              ><input type="radio" name="showtype" />Акробатическое
+                              шоу<span class="radio"></span
+                            ></label>
+                            <label class="form__radio"
+                              ><input type="radio" name="showtype" />Лазерное Шоу<span class="radio"></span
+                            ></label>
+                            <label class="form__radio"
+                              ><input type="radio" name="showtype" />Огненное шоу<span
+                                class="radio"
+                              ></span
+                            ></label>
+                          </div>
+                          <label class="select gather__select"
+                            ><select
+                              class="form__select select-quantity "
+                            >
+                              <option selected>Количество флайбордистов</option>
+                              <option value="1">Один</option>
+                              <option value="2">Два</option>
+                              <option value="3">Три</option>
+                            </select></label
+                          >
+                        </div>
+                        <div class="gather__item">
+                          <h3 class="secondary-title secondary-title--red gather__item-title">
+                            Дополнительно
+                          </h3>
+                          <div class="form__extra order__extra">
+                            
+                            <label class="form__check"
+                              ><input type="checkbox" />Цветной дым<span
+                                class="checkbox"
+                              ></span
+                            ></label>
+                            <label class="form__check"
+                              ><input type="checkbox" />Пошив костюмов<span
+                                class="checkbox"
+                              ></span
+                            ></label>
+                            <label class="form__check"
+                              ><input type="checkbox" />Уникальный сценарий под ваше
+                              мероприятие<span class="checkbox"></span
+                            ></label>
+                            <label class="form__check"
+                              ><input type="checkbox" />Полет с участником
+                              мероприятия<span class="checkbox"> </span
+                            ></label>
+                            <label class="form__check"
+                              ><input type="checkbox" />Аренда флайборда<span
+                                class="checkbox"
+                              ></span
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="gather__confirm common-button">
+                        Заполнить данные о заказе
+                      </button>
+                    </form></div>
                     <!-- %  --- gather tab 3 -->
-                    <div class="gather__tab-cont" id="gather-tab-third"></div>
+                    <div class="gather__tab-cont" id="gather-tab-third"><form action="" class="gather__form">
+                      <div class="gather__items">
+                        <div class="gather__item">
+                          <h3 class="secondary-title secondary-title--red gather__item-title">
+                            Выберите вид шоу
+                          </h3>
+                          <div class="form__type ">
+                           
+                            <label class="form__radio"
+                              ><input type="radio" name="showtype" />Акробатическое
+                              шоу<span class="radio"></span
+                            ></label>
+                            <label class="form__radio"
+                              ><input type="radio" name="showtype" />Костюмированное
+                              шоу<span class="radio"></span
+                            ></label>
+                            <label class="form__radio"
+                              ><input type="radio" name="showtype" />Детское шоу<span
+                                class="radio"
+                              ></span
+                            ></label>
+                          </div>
+                          <label class="select gather__select"
+                            ><select
+                              class="form__select select-quantity "
+                            >
+                              <option selected>Количество флайбордистов</option>
+                              <option value="1">Один</option>
+                              <option value="2">Два</option>
+                              <option value="3">Три</option>
+                            </select></label
+                          >
+                        </div>
+                        <div class="gather__item">
+                          <h3 class="secondary-title secondary-title--red gather__item-title">
+                            Дополнительно
+                          </h3>
+                          <div class="form__extra order__extra">
+                            
+                            <label class="form__check"
+                              ><input type="checkbox" />Цветной дым<span
+                                class="checkbox"
+                              ></span
+                            ></label>
+                            <label class="form__check"
+                              ><input type="checkbox" />Пошив костюмов<span
+                                class="checkbox"
+                              ></span
+                            ></label>
+                            <label class="form__check"
+                              ><input type="checkbox" />Уникальный сценарий под ваше
+                              мероприятие<span class="checkbox"></span
+                            ></label>
+                            <label class="form__check"
+                              ><input type="checkbox" />Полет с участником
+                              мероприятия<span class="checkbox"> </span
+                            ></label>
+                            <label class="form__check"
+                              ><input type="checkbox" />Аренда флайборда<span
+                                class="checkbox"
+                              ></span
+                            ></label>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="gather__confirm common-button">
+                        Заполнить данные о заказе
+                      </button>
+                    </form></div>
                   </div>
                 </div>
               </div>
