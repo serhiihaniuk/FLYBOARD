@@ -77,6 +77,7 @@ function breakpointChecker() {
   ) {
     initMobile();
     if (fullPage !== undefined) {
+      resetParallax();
       fullPage.destroy(true);
     }
     return;
@@ -94,7 +95,7 @@ function enableSwiper() {
     slidesPerView: "auto",
     loop: false,
 
-    speed: 800,
+    speed: 1000,
     parallax: true,
     freeMode: true,
     mousewheel: {
@@ -139,6 +140,13 @@ function initMobile() {
   page.classList.add("mobile");
   swiperContainer.classList.add("mobile");
   screenWrapper.classList.add("mobile");
+}
+
+function resetParallax() {
+  const parallax = document.querySelectorAll("[data-swiper-parallax]");
+  parallax.forEach((item) => {
+    item.style.cssText = "";
+  });
 }
 
 const photoSlider = new Swiper(".slider-photo", {
@@ -202,7 +210,7 @@ function tabs(buttons, tabContent, section, sectionName) {
   });
 }
 
-//# promo order
+//# Make order
 
 const orderHeaderBtn = document.querySelector(".header__order");
 const orderAside = document.querySelector(".order");
@@ -218,7 +226,7 @@ const requestAsideBody = document.querySelector(".request__body");
 const requestAsideContent = document.querySelector(".request__content");
 const requestAsideClose = document.querySelector(".request__close");
 const requestBtn = document.querySelector(".request-button");
-const gatherConfirmBtns = document.querySelectorAll(".gather__confirm");
+const sendOrderBtns = document.querySelectorAll(".gather__confirm");
 
 const orderThank = `  
     <div class="order__thank">
@@ -264,7 +272,7 @@ function requestMenuClose() {
 }
 
 //* open send request aside menu after pressing "send request btn"
-gatherConfirmBtns.forEach((button) => {
+sendOrderBtns.forEach((button) => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
     requestAside.classList.add("active");
@@ -299,8 +307,6 @@ function showThanks() {
     fullPage.slideTo(0, 800);
   });
   goMainRequest.addEventListener("click", (e) => {
-    console.log("asd");
-
     requestMenuClose();
     fullPage.slideTo(0, 800);
   });
