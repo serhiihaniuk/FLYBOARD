@@ -97,6 +97,7 @@
    // .gallery__item
    &__item {
       flex: 0 0 24%;
+
       @media (max-width: $XS) {
          flex: 0 0 49%;
          margin: 15px 0px 0px 0px;
@@ -110,11 +111,15 @@
 
       border: 10px solid rgba(255, 255, 255, 0.5);
       transform: skewX(-5deg);
+      transition: transform 0.3s ease;
       @media screen and (max-height: 825px) {
          height: 250px;
       }
       @media (max-width: $mob) {
          height: 300px;
+      }
+      &:hover {
+         transform: skewX(-5deg) scale(1.05);
       }
    }
 
