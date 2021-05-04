@@ -54,6 +54,7 @@
    @media (max-width: $XS) {
       font-size: 45px;
       line-height: 35px;
+      text-align: center;
    }
    @media (max-width: $mob) {
       font-size: 35px;
@@ -107,12 +108,9 @@
    }
    &__picture {
       height: 350px;
-
       border: 10px solid rgba(255, 255, 255, 0.5);
       transform: skewX(-5deg);
-      @media screen and (max-height: 825px) {
-         height: 250px;
-      }
+
       @media (max-width: $mob) {
          height: 300px;
       }

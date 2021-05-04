@@ -18,7 +18,7 @@
 }
 .aside-events__body {
    position: fixed;
-   right: 0;
+   left: 0;
    top: 0;
    width: 500px;
    height: 100%;
@@ -30,7 +30,7 @@
    align-items: flex-end;
    justify-content: space-between;
    text-align: right;
-   transform: translateX(110%);
+   transform: translateX(-110%);
    transition: transform 0.3s ease;
 }
 .aside-events__body.active {

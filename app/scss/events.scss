@@ -13,13 +13,16 @@
       flex: 1 0 auto;
       flex-direction: column;
       justify-content: space-evenly;
-
       height: 100%;
    }
 
    // .events__title
 
    &__title {
+      @media (min-width: $XS) and (max-height: 825px) {
+         font-size: 45px;
+         line-height: 45px;
+      }
       @media (max-width: $XS) {
          margin: 0px 0px 40px 0px;
       }

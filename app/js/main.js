@@ -22,6 +22,16 @@ const screenNames = {
   7: "Соберите Ваше шоу",
 };
 function changeArrowName() {
+  if (!screenNames[fullPage.realIndex - 1]) {
+    prevArrowName.nextElementSibling.style.display = "none";
+  } else {
+    prevArrowName.nextElementSibling.style.display = "";
+  }
+  if (!screenNames[fullPage.realIndex + 1]) {
+    nextArrowName.nextElementSibling.style.display = "none";
+  } else {
+    nextArrowName.nextElementSibling.style.display = "";
+  }
   prevArrowName.innerHTML = screenNames[fullPage.realIndex - 1] || "";
   nextArrowName.innerHTML = screenNames[fullPage.realIndex + 1] || "";
 }
@@ -34,6 +44,7 @@ asideBurger.addEventListener("click", () => {
 asideClose.addEventListener("click", () => {
   asideMenuClose();
 });
+
 aside.addEventListener("click", (e) => {
   if (e.target === aside) {
     asideMenuClose();
@@ -61,6 +72,23 @@ function linkRemoveActive() {
   const menuLinkActive = document.querySelector(".aside-events__item.active");
   if (menuLinkActive) menuLinkActive.classList.remove("active");
 }
+//# aside navigation mobile --
+const asideMobileBurger = document.querySelector(".header__menu-brgr");
+const asideMenuList = document.querySelector(".header__menu");
+const asideMobileClose = document.querySelector(".header__aside-close");
+const asideMobileCloseList = document.querySelectorAll(".close");
+
+asideMobileBurger.addEventListener("click", () => {
+  asideMenuList.classList.add("active");
+});
+asideMobileClose.addEventListener("click", () => {
+  asideMenuList.classList.remove("active");
+});
+asideMobileCloseList.forEach((item) => {
+  item.addEventListener("click", () => {
+    asideMenuList.classList.remove("active");
+  });
+});
 
 //# fullpage init --
 const breakpointWidth = window.matchMedia("(min-width:577px)");

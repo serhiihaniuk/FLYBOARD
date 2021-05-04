@@ -91,7 +91,7 @@
 
       @media (max-width: $XS) {
          flex: 0 0 90%;
-         transform: skewX(0deg);
+         transform: skewX(-2deg);
       }
       @media (max-width: $mob) {
          padding: 10px;
@@ -113,7 +113,7 @@
       transform: skewX(5deg);
       margin-bottom: 25px;
       @media (max-width: $XS) {
-         transform: skewX(0deg);
+         transform: skewX(2deg);
       }
    }
 
@@ -122,7 +122,7 @@
    &__list {
       transform: skewX(5deg);
       @media (max-width: $XS) {
-         transform: skewX(0deg);
+         transform: skewX(2deg);
       }
    }
 

@@ -18,7 +18,7 @@
 
 .order__body {
    position: fixed;
-   right: 0;
+   left: 0;
    top: 0;
    width: 820px;
    height: 100%;
@@ -29,7 +29,7 @@
    flex-direction: column;
    justify-content: space-between;
    text-align: right;
-   transform: translateX(110%);
+   transform: translateX(-110%);
    transition: transform 0.3s ease;
    overflow-y: auto;
    @media (max-width: 820px) {

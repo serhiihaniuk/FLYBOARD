@@ -73,6 +73,7 @@
       @media (max-width: $XS) {
          flex-wrap: wrap;
          justify-content: center;
+         padding: 0 0;
       }
    }
 
@@ -86,8 +87,8 @@
       transform: skewX(-5deg);
       background-color: #fff;
       @media (max-width: $M) {
-         transform: skewX(0);
-         padding: 10px;
+         transform: skewX(-2deg);
+         padding: 15px 10px;
       }
       @media (max-width: $XS) {
          flex: 0 0 90%;

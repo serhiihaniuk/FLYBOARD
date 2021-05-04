@@ -13,6 +13,12 @@
         <!-- % = = = = HEADER -->
         <header class="header">
           <div class="header__content container">
+            <div class="header__brgr">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="header__menu-brgr">
+              <span></span><span></span><span></span>
+            </div>
             <a class="header__logo-link" href=""
               ><picture>
                 <source srcset="img/logo-min.png" media="(max-width: 576px)" />
@@ -24,18 +30,24 @@
             ></a>
 
             <nav class="header__menu">
+              <div class="header__aside-close">&#10005</div>
               <ul class="header__list">
-                <li class="header__item"><a href="#">О нас</a></li>
-                <li class="header__item"><a href="#">Цены</a></li>
-                <li class="header__item"><a href="#">Школа</a></li>
-                <li class="header__item"><a href="#">Шоу</a></li>
-                <li class="header__item"><a href="#">В подарок</a></li>
-                <li class="header__item"><a href="#">Купить</a></li>
-                <li class="header__item"><a href="#">Трюки</a></li>
-                <li class="header__item"><a href="#">Вопросы</a></li>
-                <li class="header__item"><a href="#">Отзывы</a></li>
-                <li class="header__item"><a href="#">Контакты</a></li>
+                <li class="header__item close"><a href="#">О нас</a></li>
+                <li class="header__item close"><a href="#">Цены</a></li>
+                <li class="header__item close"><a href="#">Школа</a></li>
+                <li class="header__item close"><a href="#">Шоу</a></li>
+                <li class="header__item close"><a href="#">В подарок</a></li>
+                <li class="header__item close"><a href="#">Купить</a></li>
+                <li class="header__item close"><a href="#">Трюки</a></li>
+                <li class="header__item close"><a href="#">Вопросы</a></li>
+                <li class="header__item close"><a href="#">Отзывы</a></li>
+                <li class="header__item close"><a href="#">Контакты</a></li>
               </ul>
+              <div class="header__aside-contacts"><a href="tel:380679200950" class="header__aside-tel close"
+                >+38 (067) 920-0-950</a
+              >
+              <button class="header__order common-button header__aside-btn close">Забронировать онлайн</button>
+            </div>
             </nav>
             <div class="header__contacts">
               <a href="tel:380679200950" class="header__tel"
@@ -43,17 +55,8 @@
               >
               <button class="header__order common-button">Заказать шоу</button>
             </div>
-            <div class="header__language">
-              <label for="lang"></label>
-
-              <select name="lang" id="lang" class="header__select">
-                <option class="header__option" value="RU">RU</option>
-                <option class="header__option" value="EN">EN</option>
-              </select>
-            </div>
-            <div class="header__brgr">
-              <span></span><span></span><span></span>
-            </div>
+            
+            
           </div>
         </header>
         <!-- # = = = = ASIDE-NAVIGATION -->
@@ -68,7 +71,7 @@
               <li class="aside-events__item">Наши фото и видео</li>
               <li class="aside-events__item">Как мы работаем</li>
               <li class="aside-events__item">Скидка для агентств</li>
-              <li class="aside-events__item">Соберите Ваше шоу</li>
+              <li class="aside-events__item">Соберите своё шоу</li>
             </ul>
             <button class="aside-events__order common-button">
               Заказать шоу
@@ -1261,7 +1264,7 @@
               </div>
             </div>
             <!-- % = = = = SCREEN6 DISCOUNT -->
-            <div class="screen">
+            <div class="screen disc">
               <div class="discount">
                 <div class="discount__wrapper container">
                   <h3 class="discount__common-title common-title">
@@ -1282,7 +1285,7 @@
               <div class="gather">
                 <div class="gather__wrapper container">
                   <div>
-                    <h3 class="gather__title common-title">Виды шоу</h3>
+                    <h3 class="gather__title common-title">Соберите своё шоу</h3>
                     <div class="gather__tabs">
                       <div class="tabs">
                         <button
@@ -1532,7 +1535,7 @@
           </div>
           <div class="prev-screen">
             <div class="prev-screen__name"></div>
-            <div class="prev-screen__arrow"><i class="arrow left"></i></div>
+            <div class="prev-screen__arrow" style="display: none;"><i class="arrow left"></i></div>
           </div>
         </div>
         <!-- % = = = = FOOTER -->
