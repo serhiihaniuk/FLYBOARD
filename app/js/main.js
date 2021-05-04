@@ -105,6 +105,7 @@ function breakpointChecker() {
   ) {
     initMobile();
     if (fullPage !== undefined) {
+      resetParallax();
       fullPage.destroy(true);
     }
     return;
@@ -167,6 +168,13 @@ function initMobile() {
   page.classList.add("mobile");
   swiperContainer.classList.add("mobile");
   screenWrapper.classList.add("mobile");
+}
+
+function resetParallax() {
+  const parallax = document.querySelectorAll("[data-swiper-parallax]");
+  parallax.forEach((item) => {
+    item.style.cssText = "";
+  });
 }
 
 const photoSlider = new Swiper(".slider-photo", {
@@ -232,7 +240,7 @@ function tabs(buttons, tabContent, section, sectionName) {
 
 //# promo order
 
-const orderHeaderBtn = document.querySelector(".header__order");
+const orderHeaderBtns = document.querySelectorAll(".header__order");
 const orderAside = document.querySelector(".order");
 const orderAsideBody = document.querySelector(".order__body");
 const orderAsideContent = document.querySelector(".order__content");
@@ -260,11 +268,14 @@ const orderThank = `
         <button class="common-button order__thank-btn">На главную</button>
     </div>`;
 
-orderHeaderBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  orderAside.classList.add("active");
-  orderAsideBody.classList.add("active");
+orderHeaderBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    orderAside.classList.add("active");
+    orderAsideBody.classList.add("active");
+  });
 });
+
 orderAsideBtn.addEventListener("click", (e) => {
   e.preventDefault();
   asideMenuClose();

@@ -110,9 +110,12 @@
       height: 350px;
       border: 10px solid rgba(255, 255, 255, 0.5);
       transform: skewX(-5deg);
-
+      transition: transform 0.3s ease;
       @media (max-width: $mob) {
          height: 300px;
+      }
+      &:hover {
+         transform: skewX(-5deg) scale(1.05);
       }
    }
 
